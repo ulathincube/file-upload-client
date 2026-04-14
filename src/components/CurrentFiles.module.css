@@ -1,0 +1,7 @@
+.files {
+  display: grid;
+  max-width: 50%;
+  grid-template-columns: repeat(5, minmax(10rem, 1fr));
+  list-style: none;
+  gap: 1.5rem;
+}

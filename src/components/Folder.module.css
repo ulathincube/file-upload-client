@@ -1,0 +1,21 @@
+.folder {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0.5rem;
+
+  /* width: 7rem; */
+  height: 10rem;
+  border: 0.1rem solid black;
+  text-decoration: none;
+  color: black;
+  padding: 1rem;
+}
+
+.link {
+  text-decoration: none;
+  color: black;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}

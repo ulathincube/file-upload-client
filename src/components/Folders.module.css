@@ -1,0 +1,9 @@
+.folders {
+  display: grid;
+  max-width: 50%;
+  grid-template-columns: repeat(5, minmax(10rem, 1fr));
+  gap: 1.5rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
