@@ -17,7 +17,7 @@ import Error from "../components/Error";
 import Loading from "../components/Loading";
 
 function Uploads() {
-  const folderNameInputRef = useRef();
+  // const folderNameInputRef = useRef();
 
   const [showForm, setShowForm] = useState(false);
 

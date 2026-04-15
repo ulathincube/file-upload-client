@@ -1,12 +1,16 @@
 import styles from "./FileDetails.module.css";
 import { Link } from "react-router";
+import formatDate from "../utils/formatDate";
 
 function FileDetails({ name, createdAt, id, size, url }) {
+  const creationDate = formatDate(createdAt);
+
   return (
-    <article className={styles.file}>
+    <article id={id} className={styles.file}>
+      <span className={`material-symbols-outlined ${styles.icon}`}>draft</span>
       <h3 className={styles.name}>{name}</h3>
-      <span className={styles.date}>{createdAt}</span>
-      <span className={styles.size}>{size}</span>
+      <span className={styles.date}>{creationDate}</span>
+      <span className={styles.size}>{size}KB</span>
       <Link className={styles.download} to={url} download={name}>
         Download
       </Link>

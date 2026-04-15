@@ -57,3 +57,23 @@
   background-color: transparent;
   border: none;
 }
+
+@media screen and (max-width: 63em) {
+  .create,
+  .cancel {
+    padding: 0.25rem 0.5rem;
+    font-size: 1.5rem;
+  }
+}
+
+@media screen and (max-width: 37.5em) {
+  .form {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .file {
+    color: white;
+    background-color: orange;
+  }
+}

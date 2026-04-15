@@ -10,6 +10,8 @@ import CurrentFiles from "../components/CurrentFiles";
 import ErrorBoundary from "../components/ErrorBoundary";
 import Folder from "../components/Folder";
 import Button from "../components/Button";
+import { useState } from "react";
+import StyledButton from "../components/StyledButton";
 
 function CurrentFolder() {
   const { folder } = useParams();
@@ -19,6 +21,12 @@ function CurrentFolder() {
     queryFn: () => File.getFilesFromFolder(folder),
     retry: 1,
   });
+
+  const [showCreateFile, setShowCreateFile] = useState(false);
+
+  const onToggleShowCreateFile = () => {
+    setShowCreateFile(!showCreateFile);
+  };
 
   if (isPending) return <div>...Loading...</div>;
 
@@ -33,8 +41,13 @@ function CurrentFolder() {
       <ErrorBoundary fallback={<h1>Error rendering CurrentFiles</h1>}>
         <CurrentFiles>{filesData}</CurrentFiles>
       </ErrorBoundary>
-      +
-      <CreateFile folder={folder} />
+      {showCreateFile ? (
+        <CreateFile folder={folder} onToggle={onToggleShowCreateFile} />
+      ) : (
+        <StyledButton onClick={onToggleShowCreateFile}>
+          Upload File
+        </StyledButton>
+      )}
       {/* <CreateFolder /> */}
       <Footer />
     </>
