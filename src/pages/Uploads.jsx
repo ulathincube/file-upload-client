@@ -1,7 +1,7 @@
 import Button from "../components/Button";
-import { useRef, useState } from "react";
+import { useState } from "react";
 import File from "../services/file";
-import { useQuery, useQueryClient, useMutation } from "@tanstack/react-query";
+import { useQuery } from "@tanstack/react-query";
 import Folders from "../components/Folders";
 import Folder from "../components/Folder";
 import Header from "../components/Header";
@@ -69,7 +69,9 @@ function Uploads() {
 
   // [{name, id, files: []}]
 
-  const filesData = data.map(({ id, name, files }) => {
+  const { data: serverData } = data;
+
+  const filesData = serverData.map(({ id, name, files }) => {
     if (name === "/")
       return (
         <>

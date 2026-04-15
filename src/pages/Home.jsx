@@ -15,7 +15,7 @@ function Home() {
           <span className={styles.italic}>here!</span>
         </h1>
         <p className={styles.text}>
-          <span class="material-symbols-outlined">arrow_circle_down</span>
+          <span className="material-symbols-outlined">arrow_circle_down</span>
         </p>
         <Link className={styles.link} to="/uploads">
           Start Now

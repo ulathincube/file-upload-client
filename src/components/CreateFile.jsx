@@ -41,11 +41,11 @@ function CreateFile({ folder = null, onToggle }) {
         </div>
         <div className={styles.actions}>
           <Button className={styles.create} type="submit">
-            <span class="material-symbols-outlined">upload</span>
+            <span className="material-symbols-outlined">upload</span>
             <span> Upload File</span>
           </Button>
           <Button className={styles.cancel} onClick={onToggle}>
-            <span class="material-symbols-outlined">cancel</span>
+            <span className="material-symbols-outlined">cancel</span>
             <span>Cancel</span>
           </Button>
         </div>

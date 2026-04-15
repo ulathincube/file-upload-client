@@ -1,5 +1,5 @@
 import Button from "../components/Button";
-import { useRef, useState } from "react";
+import { useRef } from "react";
 import File from "../services/file";
 import { useQueryClient, useMutation } from "@tanstack/react-query";
 import Folders from "../components/Folders";

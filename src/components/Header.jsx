@@ -22,7 +22,7 @@ function Header() {
           </li>
           <li className={styles.menu}>
             <Button className={styles.open}>
-              <span class="material-symbols-outlined">dehaze</span>
+              <span className="material-symbols-outlined">dehaze</span>
             </Button>
           </li>
         </ul>

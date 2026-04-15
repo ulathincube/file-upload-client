@@ -19,16 +19,18 @@ function SingleFile() {
   if (isError) return <div>...Error: {error.message}</div>;
 
   console.log(data, error, isError, isPending);
+
+  const { data: serverData } = data;
   return (
     <>
       <Header />
       <ErrorBoundary fallback={<p>Error rendering file details</p>}>
         <FileDetails
-          name={data.name}
-          createdAt={data.createdAt}
-          id={data.id}
-          size={data.size}
-          url={data.url}
+          name={serverData.name}
+          createdAt={serverData.createdAt}
+          id={serverData.id}
+          size={serverData.size}
+          url={serverData.url}
         />
       </ErrorBoundary>
       <Footer />

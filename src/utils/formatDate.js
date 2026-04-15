@@ -5,5 +5,3 @@ function formatDate(dateString) {
 }
 
 export default formatDate;
-
-console.log(formatDate("2026-04-13T11:20:49.822Z"));

@@ -32,7 +32,9 @@ function CurrentFolder() {
 
   if (isError) return <div>...Error...{error.message}</div>;
 
-  const filesData = data.files.map(({ name, id }) => (
+  const { data: serverData } = data;
+
+  const filesData = serverData.files.map(({ name, id }) => (
     <CurrentFile key={id} name={name} fileId={id} />
   ));
   return (
