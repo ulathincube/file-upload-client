@@ -23,6 +23,7 @@ function Login() {
       const { error, data } = await Auth.loginUser(email, password);
       if (error) throw new Error(error);
       loginUser(data);
+      localStorage.setItem("user", data);
       navigate("/uploads");
     } catch (error) {
       createNotificationMessage(error.message);

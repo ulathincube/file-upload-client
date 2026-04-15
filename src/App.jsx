@@ -10,7 +10,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import AuthContext from "./context/AuthContext";
 import Protected from "./components/Protected";
 import NotificationContext from "./context/NotificationContext";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Notification from "./components/Notification";
 import Error from "./components/Error";
 
@@ -22,6 +22,15 @@ function App() {
   const loginUser = (userObject) => {
     setUser(userObject);
   };
+
+  useEffect(() => {
+    const getDataFromLocalStorage = () => {
+      const userInLocalStorage = localStorage.getItem("user");
+      if (!userInLocalStorage) return;
+      loginUser(JSON.parse(userInLocalStorage));
+    };
+    getDataFromLocalStorage();
+  }, []);
 
   const createNotificationMessage = (message) => {
     setMessage(message);
