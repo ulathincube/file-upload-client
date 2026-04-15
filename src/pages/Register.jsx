@@ -83,7 +83,7 @@ function Register() {
           <input
             id="password"
             className={styles.field}
-            type="text"
+            type="password"
             placeholder="Password"
             name="password"
             value={password}
@@ -97,7 +97,7 @@ function Register() {
           <input
             id="confirm-password"
             className={styles.field}
-            type="text"
+            type="password"
             placeholder="Password"
             value={confirmPassword}
             onChange={onConfirmPasswordChange}

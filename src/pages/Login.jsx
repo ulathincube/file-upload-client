@@ -63,7 +63,7 @@ function Login() {
             id="password"
             className={styles.field}
             value={password}
-            type="text"
+            type="password"
             placeholder="Password"
             name="password"
             onChange={onPasswordChange}
