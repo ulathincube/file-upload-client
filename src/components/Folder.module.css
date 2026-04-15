@@ -1,11 +1,6 @@
 .folder {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 0.5rem;
+  border-radius: 0.25rem;
 
-  /* width: 7rem; */
-  height: 10rem;
   border: 0.1rem solid black;
   text-decoration: none;
   color: black;
@@ -13,9 +8,11 @@
 }
 
 .link {
-  text-decoration: none;
-  color: black;
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  color: black;
   gap: 0.5rem;
 }

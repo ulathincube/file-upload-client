@@ -7,25 +7,34 @@ import Folder from "../components/Folder";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import CreateFile from "../components/CreateFile";
+import CreateFolder from "../components/CreateFolder";
 import CurrentFile from "../components/CurrentFile";
 import CurrentFiles from "../components/CurrentFiles";
 import ErrorBoundary from "../components/ErrorBoundary";
+import StyledButton from "../components/StyledButton";
+import styles from "./Uploads.module.css";
+import Error from "../components/Error";
+import Loading from "../components/Loading";
 
 function Uploads() {
   const folderNameInputRef = useRef();
 
   const [showForm, setShowForm] = useState(false);
 
-  const onShowForm = () => setShowForm(true);
+  const [showCreateFile, setShowCreateFile] = useState(false);
 
-  const queryClient = useQueryClient();
+  const onToggleShowForm = () => setShowForm(!showForm);
 
-  const newFolderMutation = useMutation({
-    mutationFn: () => File.createNewFolder(folderNameInputRef.current.value),
-    onSuccess: () => {
-      queryClient.invalidateQueries(["uploads"]);
-    },
-  });
+  const onToggleShowCreateFile = () => setShowCreateFile(!showCreateFile);
+
+  // const queryClient = useQueryClient();
+
+  // const newFolderMutation = useMutation({
+  //   mutationFn: () => File.createNewFolder(folderNameInputRef.current.value),
+  //   onSuccess: () => {
+  //     queryClient.invalidateQueries(["uploads"]);
+  //   },
+  // });
 
   const { error, isError, data, isPending } = useQuery({
     queryFn: File.getAllFiles,
@@ -35,25 +44,28 @@ function Uploads() {
 
   // [{name , id, files: []}]
 
-  const onFolderNameSubmit = async (event) => {
-    event.preventDefault();
+  // const onFolderNameSubmit = async (event) => {
+  //   event.preventDefault();
 
-    const folderName = folderNameInputRef.current.value;
+  //   const folderName = folderNameInputRef.current.value;
 
-    if (folderName.length === 0) return;
+  //   if (folderName.length === 0) return;
 
-    try {
-      newFolderMutation.mutate(folderName);
-      // await File.createNewFolder(folderName);
-      setShowForm(false);
-    } catch (error) {
-      console.log(error);
-    }
-  };
+  //   try {
+  //     newFolderMutation.mutate(folderName);
+  //     // await File.createNewFolder(folderName);
+  //     setShowForm(false);
+  //   } catch (error) {
+  //     console.log(error);
+  //   }
+  // };
 
-  if (isPending) return <div>...Loading...</div>;
+  if (isPending) return <Loading />;
 
-  if (isError) return <div>...Error...: {error.message}</div>;
+  if (isError) {
+    console.log(isError, error);
+    return <Error error={error} />;
+  }
 
   // [{name, id, files: []}]
 
@@ -77,22 +89,24 @@ function Uploads() {
     <>
       <Header />
       <ErrorBoundary fallback={<h1>filesData not rendering correctly</h1>}>
-        {filesData}
+        <CurrentFiles>{filesData}</CurrentFiles>
       </ErrorBoundary>
-      <CreateFile />
-      {showForm ? (
-        <form onSubmit={onFolderNameSubmit}>
-          <div>
-            <label htmlFor="folder">Folder Name</label>
-            <input ref={folderNameInputRef} type="text" name="folder" />
-          </div>
-          <div>
-            <Button type="submit">Create Folder</Button>
-          </div>
-        </form>
-      ) : (
-        <Button onClick={onShowForm}>Create A New Folder</Button>
-      )}
+      <section className={styles.actions}>
+        {showCreateFile ? (
+          <CreateFile onToggle={onToggleShowCreateFile} />
+        ) : (
+          <StyledButton onClick={onToggleShowCreateFile}>
+            Upload File
+          </StyledButton>
+        )}
+        {showForm ? (
+          <CreateFolder onToggle={onToggleShowForm} />
+        ) : (
+          <StyledButton onClick={onToggleShowForm}>
+            Create A New Folder
+          </StyledButton>
+        )}
+      </section>
       <Footer />
     </>
   );

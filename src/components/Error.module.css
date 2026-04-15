@@ -1,0 +1,37 @@
+.error {
+  border: 0.2rem solid red;
+  border-radius: 0.25rem;
+  text-align: center;
+  background-color: red;
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  padding: 2rem;
+}
+
+.heading {
+  font-size: 3.5rem;
+  font-weight: 800;
+  color: white;
+}
+
+.text {
+  display: block;
+  color: white;
+}
+
+.link {
+  color: white;
+  display: inline-block;
+  font-weight: 500;
+  text-decoration: none;
+  border-bottom: 0.2rem solid white;
+  padding: 0.5rem 1rem;
+}
+
+.link:hover {
+  color: white;
+}

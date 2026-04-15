@@ -1,6 +1,11 @@
 import { Link, useNavigate } from "react-router";
 import { useState } from "react";
 import Auth from "../services/auth";
+import Header from "../components/Header";
+import Footer from "../components/Footer";
+import styles from "./Register.module.css";
+import Button from "../components/Button";
+import useNotification from "../hooks/useNotification";
 
 function Register() {
   const [name, setName] = useState("");
@@ -9,6 +14,8 @@ function Register() {
   const [confirmPassword, setConfirmPassword] = useState("");
 
   const navigate = useNavigate();
+
+  const { createNotificationMessage } = useNotification();
 
   const onNameChange = ({ target: { value } }) => setName(value);
 
@@ -23,23 +30,31 @@ function Register() {
     event.preventDefault();
 
     // throw error here
-    if (confirmPassword !== password) return;
+    if (confirmPassword !== password) {
+      return createNotificationMessage("Passwords are not similar!");
+    }
 
     try {
-      const newUser = await Auth.registerUser(name, email, password);
-      console.log(newUser);
-      if (newUser) return navigate("/");
+      const { data, error } = await Auth.registerUser(name, email, password);
+      if (error) throw new Error(error);
+      console.log(data);
+      return navigate("/login");
     } catch (error) {
-      console.log(error.message);
+      createNotificationMessage(error.message);
     }
   };
 
   return (
     <>
-      <form onSubmit={registerUserHandler}>
-        <div>
-          <label htmlFor="username">Full Name</label>
+      <Header />
+      <form className={styles.form} onSubmit={registerUserHandler}>
+        <div className={styles.group}>
+          <label className={styles.label} htmlFor="username">
+            Full Name
+          </label>
           <input
+            id="username"
+            className={styles.field}
             type="text"
             placeholder="Full Name"
             name="name"
@@ -47,9 +62,13 @@ function Register() {
             onChange={onNameChange}
           />
         </div>
-        <div>
-          <label htmlFor="email">Email Address</label>
+        <div className={styles.group}>
+          <label className={styles.label} htmlFor="email">
+            Email Address
+          </label>
           <input
+            id="email"
+            className={styles.field}
             type="email"
             placeholder="Email Address"
             name="email"
@@ -57,9 +76,13 @@ function Register() {
             onChange={onEmailChange}
           />
         </div>
-        <div>
-          <label htmlFor="password">Password</label>
+        <div className={styles.group}>
+          <label className={styles.label} htmlFor="password">
+            Password
+          </label>
           <input
+            id="password"
+            className={styles.field}
             type="text"
             placeholder="Password"
             name="password"
@@ -67,22 +90,31 @@ function Register() {
             onChange={onPasswordChange}
           />
         </div>
-        <div>
-          <label htmlFor="confirm-password">Confirm Password</label>
+        <div className={styles.group}>
+          <label className={styles.label} htmlFor="confirm-password">
+            Confirm Password
+          </label>
           <input
+            id="confirm-password"
+            className={styles.field}
             type="text"
             placeholder="Password"
             value={confirmPassword}
             onChange={onConfirmPasswordChange}
           />
         </div>
-        <div>
-          <button type="submit">Register</button>
+        <div className={styles.group}>
+          <Button className={styles.register} type="submit">
+            Register
+          </Button>
         </div>
       </form>
-      <div>
-        <Link to="/login">Already have an account? Login here!</Link>
+      <div className={styles.flow}>
+        <Link className={styles.out} to="/login">
+          Already have an account? Login here!
+        </Link>
       </div>
+      <Footer />
     </>
   );
 }

@@ -24,10 +24,12 @@ html {
 body {
   /* 4. Increase line-height */
   line-height: 1.5;
-  font-size: 1.9rem;
+  font-size: 2.5rem;
   /* 5. Improve text rendering */
   -webkit-font-smoothing: antialiased;
-  font-family: 'Outfit', sans-serif;
+  font-family: "Reddit Sans", sans-serif;
+  /* positioning */
+  position: relative;
 }
 
 /* 6. Improve media defaults */
@@ -80,18 +82,88 @@ h6 {
   isolation: isolate;
 }
 
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+
+  /* questionable */
+  max-width: 150rem;
+  /* questionable */
+
+  margin-left: auto;
+  margin-right: auto;
+}
+
 /*  11. Material Icons */
 
 .material-symbols-outlined {
   font-variation-settings:
-    'FILL' 1,
-    'wght' 400,
-    'GRAD' 0,
-    'opsz' 24;
+    "FILL" 1,
+    "wght" 400,
+    "GRAD" 0,
+    "opsz" 24;
+  font-size: 3.6rem;
 }
 
 ul,
 ol {
   padding: 0;
   margin: 0;
+}
+
+@media screen and (max-width: 100em) {
+  #root {
+    max-width: 100rem;
+  }
+
+  body {
+    font-size: 2rem;
+  }
+}
+
+@media screen and (max-width: 75em) {
+  #root {
+    max-width: 90rem;
+  }
+
+  body {
+    font-size: 1.8rem;
+  }
+}
+
+@media screen and (max-width: 63em) {
+  #root {
+    max-width: 60rem;
+  }
+
+  body {
+    font-size: 1.7rem;
+  }
+}
+
+@media screen and (max-width: 43.75em) {
+  /* #root {
+    max-width: 55rem;
+  } */
+
+  .material-symbols-outlined {
+    font-size: 2.4rem;
+  }
+
+  html {
+    font-size: 56.25%;
+  }
+}
+
+@media screen and (max-width: 37.5em) {
+  #root {
+    max-width: 40rem;
+  }
+}
+
+@media screen and (max-width: 25em) {
+  #root {
+    max-width: 35rem;
+  }
 }

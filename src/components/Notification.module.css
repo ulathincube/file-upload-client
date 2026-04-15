@@ -1,0 +1,14 @@
+.notification {
+  border-radius: 0.25rem;
+  border: 0.1rem solid orange;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  background-color: orange;
+  color: black;
+  padding: 1rem;
+  font-weight: 500;
+}

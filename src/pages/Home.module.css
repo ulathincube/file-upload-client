@@ -1,0 +1,65 @@
+.home {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+.heading {
+  font-weight: 500;
+  font-size: 5rem;
+}
+
+.text {
+  animation: 1000ms ease-out 0ms infinite alternate none pointer;
+  font-weight: 400;
+  color: orange;
+}
+
+.actions {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.italic {
+  font-style: italic;
+  font-weight: 700;
+  color: orange;
+}
+
+.link {
+  display: inline-block;
+  margin-top: 6rem;
+  text-decoration: none;
+  background-color: orange;
+  color: white;
+  font-weight: 600;
+  font-size: 3rem;
+  padding: 1rem 3rem;
+  border-radius: 0.5rem;
+}
+
+@keyframes pointer {
+  0% {
+    transform: translateY(0);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(5rem);
+    opacity: 1;
+  }
+}
+
+@media screen and (max-width: 43.75em) {
+  .heading {
+    font-size: 4rem;
+  }
+}
+
+@media screen and (max-width: 37.5em) {
+  .link {
+    font-size: 2.5rem;
+    min-width: 100%;
+  }
+}

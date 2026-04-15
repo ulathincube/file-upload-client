@@ -15,7 +15,7 @@ class Auth {
         }),
       });
 
-      return response.json();
+      return await response.json();
     } catch (error) {
       if (error) throw error;
     }
@@ -30,8 +30,6 @@ class Auth {
         },
         body: JSON.stringify({ name, email, password }),
       });
-
-      if (!response.ok) throw new Error("Failed to create an account!");
 
       return await response.json();
     } catch (error) {
