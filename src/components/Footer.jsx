@@ -13,7 +13,7 @@ function Footer() {
       </Link>
       <nav>
         <ul className={styles.list}>
-          <li>
+          <li className={styles.pick}>
             {user ? (
               <Button className={styles.logout}>Log Out</Button>
             ) : (

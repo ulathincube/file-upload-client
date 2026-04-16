@@ -42,4 +42,14 @@
   .logo {
     font-size: 2.5rem;
   }
+
+  .pick {
+    visibility: hidden;
+    pointer-events: none;
+    display: none;
+  }
+
+  .link {
+    font-size: 2rem;
+  }
 }
