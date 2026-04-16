@@ -1,4 +1,5 @@
-const baseUrl = `${import.meta.env.VITE_API_URL}/auth`;
+// const baseUrl = `${import.meta.env.VITE_API_URL}/auth`;
+const baseUrl = "/api/auth";
 
 class Auth {
   static async loginUser(email, password) {
@@ -15,8 +16,6 @@ class Auth {
         }),
       });
 
-      if (!response.ok) throw new Error("Failed to login");
-
       return await response.json();
     } catch (error) {
       if (error) throw error;
@@ -32,8 +31,6 @@ class Auth {
         },
         body: JSON.stringify({ name, email, password }),
       });
-
-      if (!response.ok) throw new Error("Failed to register");
 
       return await response.json();
     } catch (error) {

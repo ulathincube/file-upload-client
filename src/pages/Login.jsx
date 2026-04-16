@@ -8,6 +8,9 @@ import useNotification from "../hooks/useNotification";
 import styles from "./Login.module.css";
 import Button from "../components/Button";
 import useLocalStorage from "../hooks/useLocalStorage";
+import { useMutation } from "@tanstack/react-query";
+import Loading from "../components/Loading";
+import Error from "../components/Error";
 
 function Login() {
   const [email, setEmail] = useState("");
@@ -22,21 +25,28 @@ function Login() {
     if (user) navigate("/uploads");
   }, [user, navigate]);
 
-  const loginHandler = async (event) => {
-    event.preventDefault();
-    try {
-      const { error, data } = await Auth.loginUser(email, password);
-      if (error) throw new Error(error);
+  const { mutate, isPending, isError, error } = useMutation({
+    mutationFn: () => Auth.loginUser(email, password),
+    onSuccess: ({ data, error }) => {
+      if (error) {
+        createNotificationMessage(error);
+        return;
+      }
+
       loginUser(data);
       setUserStore(data);
-
       createNotificationMessage("You are now logged in!");
       setTimeout(() => {
         navigate("/uploads");
       }, 1500);
-    } catch (error) {
-      createNotificationMessage(error.message);
-    }
+    },
+  });
+
+  console.log({ isError, error });
+
+  const loginHandler = async (event) => {
+    event.preventDefault();
+    mutate(email, password);
   };
 
   const onEmailChange = ({ target }) => {
@@ -46,6 +56,10 @@ function Login() {
   const onPasswordChange = ({ target }) => {
     setPassword(target.value);
   };
+
+  // if (isError) return <Error error={error} />;
+
+  if (isPending) return <Loading />;
 
   return (
     <>

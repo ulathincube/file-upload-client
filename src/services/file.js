@@ -1,4 +1,5 @@
-const baseUrl = `${import.meta.env.VITE_API_URL}/files`;
+// const baseUrl = `${import.meta.env.VITE_API_URL}/files`;
+const baseUrl = "/api/files";
 
 class File {
   static async uploadFile(file) {

@@ -7,6 +7,9 @@ import styles from "./Register.module.css";
 import Button from "../components/Button";
 import useNotification from "../hooks/useNotification";
 import useAuth from "../hooks/useAuth";
+import { useMutation } from "@tanstack/react-query";
+import Loading from "../components/Loading";
+import Error from "../components/Error";
 
 function Register() {
   const [name, setName] = useState("");
@@ -20,6 +23,22 @@ function Register() {
   useEffect(() => {
     if (user) navigate("/uploads");
   }, [user, navigate]);
+
+  const { mutate, isPending, isError, error } = useMutation({
+    mutationFn: () => Auth.registerUser(name, email, password),
+
+    onSuccess: ({ data, error }) => {
+      if (error) {
+        createNotificationMessage(error);
+        return;
+      }
+      createNotificationMessage(data);
+
+      setTimeout(() => {
+        navigate("/login");
+      }, 1500);
+    },
+  });
 
   const { createNotificationMessage } = useNotification();
 
@@ -40,19 +59,12 @@ function Register() {
       return createNotificationMessage("Passwords are not similar!");
     }
 
-    try {
-      const { data, error } = await Auth.registerUser(name, email, password);
-      if (error) throw new Error(error);
-
-      createNotificationMessage(data);
-
-      setTimeout(() => {
-        navigate("/login");
-      }, 1500);
-    } catch (error) {
-      createNotificationMessage(error.message);
-    }
+    mutate(name, email, password);
   };
+
+  if (isError) return <Error error={error} />;
+
+  if (isPending) return <Loading />;
 
   return (
     <>
