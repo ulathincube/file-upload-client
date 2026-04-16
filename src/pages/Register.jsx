@@ -1,19 +1,25 @@
 import { Link, useNavigate } from "react-router";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Auth from "../services/auth";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import styles from "./Register.module.css";
 import Button from "../components/Button";
 import useNotification from "../hooks/useNotification";
+import useAuth from "../hooks/useAuth";
 
 function Register() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
+  const { user } = useAuth();
 
   const navigate = useNavigate();
+
+  useEffect(() => {
+    if (user) navigate("/uploads");
+  }, [user, navigate]);
 
   const { createNotificationMessage } = useNotification();
 
@@ -37,8 +43,12 @@ function Register() {
     try {
       const { data, error } = await Auth.registerUser(name, email, password);
       if (error) throw new Error(error);
-      console.log(data);
-      return navigate("/login");
+
+      createNotificationMessage(data);
+
+      setTimeout(() => {
+        navigate("/login");
+      }, 1500);
     } catch (error) {
       createNotificationMessage(error.message);
     }

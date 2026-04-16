@@ -3,9 +3,12 @@ import { useRef } from "react";
 import Button from "./Button";
 import styles from "./CreateFile.module.css";
 import StyledButton from "./StyledButton";
+import useNotification from "../hooks/useNotification";
 
 function CreateFile({ folder = null, onToggle }) {
   const fileInputRef = useRef();
+
+  const { createNotificationMessage } = useNotification();
 
   const uploadFileHandler = async (event) => {
     event.preventDefault();
@@ -13,12 +16,14 @@ function CreateFile({ folder = null, onToggle }) {
       const formData = new FormData();
       formData.append("file", fileInputRef.current.files[0]);
 
-      const response = folder
+      const { data, error } = folder
         ? await File.createFileInFolder({ folder, file: formData })
         : await File.uploadFile(formData);
-      console.log({ response });
+
+      if (error) throw new Error(error);
+      createNotificationMessage(data);
     } catch (error) {
-      if (error) throw error;
+      createNotificationMessage(error.message);
     }
   };
 

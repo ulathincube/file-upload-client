@@ -18,8 +18,6 @@ function SingleFile() {
 
   if (isError) return <div>...Error: {error.message}</div>;
 
-  console.log(data, error, isError, isPending);
-
   const { data: serverData } = data;
   return (
     <>

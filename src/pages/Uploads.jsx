@@ -1,5 +1,5 @@
 import Button from "../components/Button";
-import { useState } from "react";
+import { useState, Fragment } from "react";
 import File from "../services/file";
 import { useQuery } from "@tanstack/react-query";
 import Folders from "../components/Folders";
@@ -74,7 +74,7 @@ function Uploads() {
   const filesData = serverData.map(({ id, name, files }) => {
     if (name === "/")
       return (
-        <>
+        <Fragment key={id}>
           {files.map((fileObject) => (
             <CurrentFile
               key={fileObject.id}
@@ -82,7 +82,7 @@ function Uploads() {
               fileId={fileObject.id}
             />
           ))}
-        </>
+        </Fragment>
       );
     return <Folder key={id} name={name} />;
   });

@@ -8,32 +8,35 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 import StyledButton from "./StyledButton";
 import styles from "./CreateFolder.module.css";
+import useNotification from "../hooks/useNotification";
 
 function CreateFolder({ onToggle }) {
   const folderNameInputRef = useRef();
 
   const queryClient = useQueryClient();
 
+  const { createNotificationMessage } = useNotification();
+
   const newFolderMutation = useMutation({
     mutationFn: () => File.createNewFolder(folderNameInputRef.current.value),
-    onSuccess: () => {
+    onSuccess: ({ data }) => {
       queryClient.invalidateQueries(["uploads"]);
+      createNotificationMessage(data);
+    },
+    onError: ({ error }) => {
+      createNotificationMessage(error);
     },
   });
 
   const onFolderNameSubmit = async (event) => {
     event.preventDefault();
-
     const folderName = folderNameInputRef.current.value;
-
     if (folderName.length === 0) return;
-
     try {
       newFolderMutation.mutate(folderName);
-      // await File.createNewFolder(folderName);
       onToggle();
     } catch (error) {
-      console.log(error);
+      throw new Error(error);
     }
   };
 

@@ -5,21 +5,27 @@ import useAuth from "../hooks/useAuth";
 import Auth from "../services/auth";
 import useLocalStorage from "../hooks/useLocalStorage";
 import useModal from "../hooks/useModal";
+import useNotification from "../hooks/useNotification";
 
 function Header() {
   const { user, loginUser } = useAuth();
 
+  const { createNotificationMessage } = useNotification();
+
   const [, setUserStore] = useLocalStorage("user", null);
-  const [modal, toggleModal] = useModal();
+  const [, toggleModal] = useModal();
 
   const logoutUserHandler = async () => {
     try {
       const { data, error } = await Auth.logOutUser();
+
+      if (error) throw new Error(error);
+
       loginUser(null);
       setUserStore(null);
-      console.log({ data, error });
+      createNotificationMessage(data);
     } catch (error) {
-      console.error(error);
+      createNotificationMessage(error);
     }
   };
 

@@ -1,6 +1,6 @@
 import { Link, useNavigate } from "react-router";
 import Auth from "../services/auth";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import useAuth from "../hooks/useAuth";
@@ -13,12 +13,14 @@ function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
+  const navigate = useNavigate();
   const [, setUserStore] = useLocalStorage("user", null);
-
-  const { loginUser } = useAuth();
+  const { user, loginUser } = useAuth();
   const { createNotificationMessage } = useNotification();
 
-  const navigate = useNavigate();
+  useEffect(() => {
+    if (user) navigate("/uploads");
+  }, [user, navigate]);
 
   const loginHandler = async (event) => {
     event.preventDefault();
@@ -27,8 +29,11 @@ function Login() {
       if (error) throw new Error(error);
       loginUser(data);
       setUserStore(data);
-      // localStorage.setItem("user", JSON.stringify(data));
-      navigate("/uploads");
+
+      createNotificationMessage("You are now logged in!");
+      setTimeout(() => {
+        navigate("/uploads");
+      }, 1500);
     } catch (error) {
       createNotificationMessage(error.message);
     }
