@@ -47,7 +47,7 @@ function Modal() {
                 Log Out
               </Button>
             ) : (
-              <Link className={styles.link} to="/">
+              <Link className={styles.link} to="/login">
                 Log in
               </Link>
             )}
