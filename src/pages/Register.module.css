@@ -46,6 +46,17 @@
   padding-bottom: 0.3rem;
   border-bottom: 0.2rem solid currentColor;
 }
+@media screen and (max-width: 100em) {
+  .form {
+    min-width: 60%;
+  }
+}
+
+@media screen and (max-width: 63em) {
+  .form {
+    min-width: 80%;
+  }
+}
 
 @media screen and (max-width: 43.75em) {
   .form {
