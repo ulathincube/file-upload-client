@@ -4,11 +4,13 @@ import Button from "./Button";
 import useAuth from "../hooks/useAuth";
 import Auth from "../services/auth";
 import useLocalStorage from "../hooks/useLocalStorage";
+import useModal from "../hooks/useModal";
 
 function Header() {
   const { user, loginUser } = useAuth();
 
   const [, setUserStore] = useLocalStorage("user", null);
+  const [modal, toggleModal] = useModal();
 
   const logoutUserHandler = async () => {
     try {
@@ -19,6 +21,10 @@ function Header() {
     } catch (error) {
       console.error(error);
     }
+  };
+
+  const onShowModal = () => {
+    toggleModal();
   };
 
   return (
@@ -45,7 +51,7 @@ function Header() {
             </Link>
           </li>
           <li className={styles.menu}>
-            <Button className={styles.open}>
+            <Button onClick={onShowModal} className={styles.open}>
               <span className="material-symbols-outlined">dehaze</span>
             </Button>
           </li>
