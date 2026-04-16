@@ -6,6 +6,11 @@
   padding-top: 3rem;
 }
 
+.logo {
+  font-size: 3.5rem;
+  font-weight: 800;
+}
+
 .box {
   text-decoration: none;
   color: orange;
