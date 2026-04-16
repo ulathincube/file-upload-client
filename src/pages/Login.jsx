@@ -7,10 +7,13 @@ import useAuth from "../hooks/useAuth";
 import useNotification from "../hooks/useNotification";
 import styles from "./Login.module.css";
 import Button from "../components/Button";
+import useLocalStorage from "../hooks/useLocalStorage";
 
 function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+
+  const [, setUserStore] = useLocalStorage("user", null);
 
   const { loginUser } = useAuth();
   const { createNotificationMessage } = useNotification();
@@ -23,7 +26,8 @@ function Login() {
       const { error, data } = await Auth.loginUser(email, password);
       if (error) throw new Error(error);
       loginUser(data);
-      localStorage.setItem("user", data);
+      setUserStore(data);
+      // localStorage.setItem("user", JSON.stringify(data));
       navigate("/uploads");
     } catch (error) {
       createNotificationMessage(error.message);

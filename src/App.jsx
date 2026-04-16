@@ -4,6 +4,7 @@ import Login from "./pages/Login";
 import Register from "./pages/Register";
 import Uploads from "./pages/Uploads";
 import SingleFile from "./pages/SingleFile";
+import About from "./pages/About";
 import CurrentFolder from "./pages/CurrentFolder";
 import NotFound from "./pages/NotFound";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
@@ -13,10 +14,11 @@ import NotificationContext from "./context/NotificationContext";
 import { useState, useEffect } from "react";
 import Notification from "./components/Notification";
 import Error from "./components/Error";
+import useLocalStorage from "./hooks/useLocalStorage";
 
 function App() {
   const queryClient = new QueryClient();
-  const [user, setUser] = useState(null);
+  const [user, setUser] = useLocalStorage("user", null);
   const [message, setMessage] = useState("");
 
   const loginUser = (userObject) => {
@@ -24,12 +26,12 @@ function App() {
   };
 
   useEffect(() => {
-    const getDataFromLocalStorage = () => {
-      const userInLocalStorage = localStorage.getItem("user");
-      if (!userInLocalStorage) return;
-      loginUser(JSON.parse(userInLocalStorage));
-    };
-    getDataFromLocalStorage();
+    // const getDataFromLocalStorage = () => {
+    //   const userInLocalStorage = localStorage.getItem("user");
+    //   if (!userInLocalStorage) return;
+    //   setUser(JSON.parse(userInLocalStorage));
+    // };
+    // getDataFromLocalStorage();
   }, []);
 
   const createNotificationMessage = (message) => {
@@ -52,6 +54,7 @@ function App() {
               <Route path="/" element={<Home />} />
               <Route path="login" element={<Login />} />
               <Route path="register" element={<Register />} />
+              <Route path="about" element={<About />} />
               <Route element={<Protected />}>
                 <Route path="uploads" element={<Uploads />} />
                 <Route path="uploads/:folder" element={<CurrentFolder />} />

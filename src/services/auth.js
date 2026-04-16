@@ -1,4 +1,5 @@
-const baseUrl = `${import.meta.env.VITE_API_URL}/auth`;
+// const baseUrl = `${import.meta.env.VITE_API_URL}/auth`;
+const baseUrl = "/api/auth";
 
 class Auth {
   static async loginUser(email, password) {
@@ -30,6 +31,24 @@ class Auth {
         },
         body: JSON.stringify({ name, email, password }),
       });
+
+      return await response.json();
+    } catch (error) {
+      if (error) throw error;
+    }
+  }
+
+  static async logOutUser() {
+    try {
+      const response = await fetch(`${baseUrl}/logout`, {
+        method: "post",
+        credentials: "include",
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+
+      if (!response.ok) throw new Error("Unable to log out user!");
 
       return await response.json();
     } catch (error) {

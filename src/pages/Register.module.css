@@ -39,6 +39,7 @@
 }
 
 .out {
+  color: orange;
   font-weight: 500;
   font-size: 1.9rem;
   text-decoration: none;

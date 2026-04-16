@@ -134,7 +134,7 @@ ol {
 
 @media screen and (max-width: 63em) {
   #root {
-    max-width: 67rem;
+    max-width: 55rem;
   }
 
   body {
