@@ -1,5 +1,4 @@
-// const baseUrl = `${import.meta.env.VITE_API_URL}/files`;
-const baseUrl = "/api/files";
+const baseUrl = `${import.meta.env.VITE_API_URL}/files`;
 
 class File {
   static async uploadFile(file) {
@@ -93,6 +92,8 @@ class File {
       const response = await fetch(`${baseUrl}/file/${fileId}`, {
         credentials: "include",
       });
+
+      if (!response.ok) throw new Error("Failed to get this file");
 
       return await response.json();
     } catch (error) {
