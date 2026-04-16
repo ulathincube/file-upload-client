@@ -57,6 +57,7 @@ function Register() {
   return (
     <>
       <Header />
+      <h1 className={styles.heading}>Register</h1>
       <form className={styles.form} onSubmit={registerUserHandler}>
         <div className={styles.group}>
           <label className={styles.label} htmlFor="username">

@@ -50,6 +50,7 @@ function Login() {
   return (
     <>
       <Header />
+      <h1 className={styles.heading}>Log In</h1>
       <form className={styles.form} onSubmit={loginHandler}>
         <div className={styles.group}>
           <label className={styles.label} htmlFor="email">

@@ -1,3 +1,12 @@
+.heading {
+  font-size: 6rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  margin-bottom: 3rem;
+  color: orange;
+  text-align: center;
+}
+
 .form {
   margin-bottom: 2rem;
   display: flex;
@@ -16,6 +25,7 @@
 
 .label {
   font-weight: 500;
+  font-size: 2.2rem;
 }
 
 .field {
@@ -23,15 +33,18 @@
   font-weight: 500;
   border-radius: 0.25rem;
   border: 0.2rem solid black;
+  font-size: 1.8rem;
 }
 
 .login {
-  padding: 1rem;
+  margin-top: 1.5rem;
+  padding: 1.5rem;
   background-color: orange;
   border: none;
-  font-weight: 500;
+  font-weight: 600;
   border-radius: 0.25rem;
-  border: 0.2rem solid black;
+  border: none;
+  font-size: 2.2rem;
 }
 
 .flow {
@@ -40,8 +53,8 @@
 
 .out {
   color: orange;
-  font-weight: 500;
-  font-size: 1.9rem;
+  font-weight: 600;
+  font-size: 2rem;
   text-decoration: none;
   padding-bottom: 0.3rem;
   border-bottom: 0.2rem solid currentColor;
@@ -56,6 +69,10 @@
 @media screen and (max-width: 63em) {
   .form {
     min-width: 80%;
+  }
+
+  .field {
+    padding: 1.5rem;
   }
 }
 
