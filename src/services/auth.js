@@ -1,5 +1,4 @@
-// const baseUrl = `${import.meta.env.VITE_API_URL}/auth`;
-const baseUrl = "/api/auth";
+const baseUrl = `${import.meta.env.VITE_API_URL}/auth`;
 
 class Auth {
   static async loginUser(email, password) {
