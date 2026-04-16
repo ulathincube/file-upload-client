@@ -3,11 +3,13 @@ import Hero from "../components/Hero";
 import Footer from "../components/Footer";
 import { Link } from "react-router";
 import styles from "./Home.module.css";
+import Navigation from "../components/Navigation";
 
 function Home() {
   return (
     <>
       <Header />
+      <Navigation />
       <section className={styles.home}>
         <h1 className={styles.heading}>
           <span className={styles.italic}>Upload</span> and{" "}

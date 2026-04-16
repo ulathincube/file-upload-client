@@ -15,6 +15,7 @@ import StyledButton from "../components/StyledButton";
 import styles from "./Uploads.module.css";
 import Error from "../components/Error";
 import Loading from "../components/Loading";
+import Navigation from "../components/Navigation";
 
 function Uploads() {
   // const folderNameInputRef = useRef();
@@ -90,6 +91,7 @@ function Uploads() {
   return (
     <>
       <Header />
+      <Navigation current="uploads" />
       <ErrorBoundary fallback={<h1>filesData not rendering correctly</h1>}>
         <CurrentFiles>{filesData}</CurrentFiles>
       </ErrorBoundary>

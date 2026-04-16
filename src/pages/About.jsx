@@ -1,12 +1,14 @@
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import styles from "./About.module.css";
+import Navigation from "../components/Navigation";
 import { Link } from "react-router";
 
 function About() {
   return (
     <>
       <Header />
+      <Navigation current="about" />
       <section className={styles.about}>
         <article className={styles.box}>
           <h1 className={styles.heading}>What is File Uploader?</h1>

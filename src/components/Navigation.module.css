@@ -1,0 +1,38 @@
+.navigation {
+  display: none;
+  visibility: hidden;
+  pointer-events: none;
+  align-items: center;
+  justify-content: space-between;
+  list-style: none;
+  margin-bottom: 3rem;
+}
+
+.item {
+  border-bottom: 0.1rem solid hsl(200deg 10% 80%);
+  padding: 0.75rem 1.5rem;
+  font-weight: 500;
+  font-size: 1.8rem;
+}
+
+.link {
+  color: hsl(200deg 10% 80%);
+  text-decoration: none;
+}
+
+.current {
+  color: orange;
+  text-decoration: none;
+}
+
+.item:has(.current) {
+  border-bottom: 0.1rem solid orange;
+}
+
+@media screen and (max-width: 37.5em) {
+  .navigation {
+    display: flex;
+    pointer-events: all;
+    visibility: visible;
+  }
+}
