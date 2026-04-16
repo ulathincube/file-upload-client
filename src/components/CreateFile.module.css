@@ -59,6 +59,16 @@
 }
 
 @media screen and (max-width: 63em) {
+  .form {
+    flex-direction: column;
+    gap: 1.75rem;
+  }
+
+  .file {
+    color: white;
+    background-color: orange;
+  }
+
   .create,
   .cancel {
     padding: 0.25rem 0.5rem;
@@ -68,12 +78,15 @@
 
 @media screen and (max-width: 37.5em) {
   .form {
-    flex-direction: column;
     gap: 1.5rem;
   }
 
-  .file {
-    color: white;
-    background-color: orange;
+  .actions {
+    min-width: 100%;
+  }
+
+  .create,
+  .cancel {
+    min-width: 100%;
   }
 }

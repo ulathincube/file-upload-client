@@ -128,6 +128,10 @@ ol {
     max-width: 90rem;
   }
 
+  .material-symbols-outlined {
+    font-size: 2.4rem;
+  }
+
   body {
     font-size: 1.8rem;
   }
@@ -143,7 +147,7 @@ ol {
   }
 
   .material-symbols-outlined {
-    font-size: 3rem;
+    /* font-size: 3rem; */
   }
 }
 
