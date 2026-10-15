@@ -1,21 +1,21 @@
-import Button from "../components/Button";
-import { useState, Fragment } from "react";
-import File from "../services/file";
-import { useQuery } from "@tanstack/react-query";
-import Folders from "../components/Folders";
-import Folder from "../components/Folder";
-import Header from "../components/Header";
-import Footer from "../components/Footer";
-import CreateFile from "../components/CreateFile";
-import CreateFolder from "../components/CreateFolder";
-import CurrentFile from "../components/CurrentFile";
-import CurrentFiles from "../components/CurrentFiles";
-import ErrorBoundary from "../components/ErrorBoundary";
-import StyledButton from "../components/StyledButton";
 import styles from "./Uploads.module.css";
-import Error from "../components/Error";
-import Loading from "../components/Loading";
-import Navigation from "../components/Navigation";
+import Button from "../../components/Button";
+import { useState, Fragment } from "react";
+import File from "../../services/file";
+import { useQuery } from "@tanstack/react-query";
+import Folders from "../../components/Folders";
+import Folder from "../../components/Folder";
+import Header from "../../components/Header";
+import Footer from "../../components/Footer";
+import CreateFile from "../../components/CreateFile";
+import CreateFolder from "../../components/CreateFolder";
+import CurrentFile from "../../components/CurrentFile";
+import CurrentFiles from "../../components/CurrentFiles";
+import ErrorBoundary from "../../components/ErrorBoundary";
+import StyledButton from "../../components/StyledButton";
+import Error from "../../components/Error";
+import Loading from "../../components/Loading";
+import Navigation from "../../components/Navigation";
 
 function Uploads() {
   // const folderNameInputRef = useRef();

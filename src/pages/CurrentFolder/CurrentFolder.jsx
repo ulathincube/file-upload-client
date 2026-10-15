@@ -1,17 +1,17 @@
 import { useParams } from "react-router";
-import Header from "../components/Header";
-import Footer from "../components/Footer";
-import File from "../services/file";
-import CreateFolder from "../components/CreateFolder";
-import CreateFile from "../components/CreateFile";
-import CurrentFile from "../components/CurrentFile";
-import { useQuery } from "@tanstack/react-query";
-import CurrentFiles from "../components/CurrentFiles";
-import ErrorBoundary from "../components/ErrorBoundary";
-import Folder from "../components/Folder";
-import Button from "../components/Button";
 import { useState } from "react";
-import StyledButton from "../components/StyledButton";
+import { useQuery } from "@tanstack/react-query";
+import Header from "../../components/Header";
+import Footer from "../../components/Footer";
+import File from "../../services/file";
+import CreateFolder from "../../components/CreateFolder";
+import CreateFile from "../../components/CreateFile";
+import CurrentFile from "../../components/CurrentFile";
+import CurrentFiles from "../../components/CurrentFiles";
+import ErrorBoundary from "../../components/ErrorBoundary";
+import Folder from "../../components/Folder";
+import Button from "../../components/Button";
+import StyledButton from "../../components/StyledButton";
 
 function CurrentFolder() {
   const { folder } = useParams();

@@ -1,15 +1,15 @@
+import styles from "./Register.module.css";
 import { Link, useNavigate } from "react-router";
 import { useState, useEffect } from "react";
-import Auth from "../services/auth";
-import Header from "../components/Header";
-import Footer from "../components/Footer";
-import styles from "./Register.module.css";
-import Button from "../components/Button";
-import useNotification from "../hooks/useNotification";
-import useAuth from "../hooks/useAuth";
+import Auth from "../../services/auth";
+import Header from "../../components/Header";
+import Footer from "../../components/Footer";
+import Button from "../../components/Button";
+import useNotification from "../../hooks/useNotification";
+import useAuth from "../../hooks/useAuth";
 import { useMutation } from "@tanstack/react-query";
-import Loading from "../components/Loading";
-import Error from "../components/Error";
+import Loading from "../../components/Loading";
+import Error from "../../components/Error";
 
 function Register() {
   const [name, setName] = useState("");

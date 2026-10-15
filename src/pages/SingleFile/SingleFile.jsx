@@ -1,10 +1,10 @@
 import { Link, useParams } from "react-router";
-import Header from "../components/Header";
-import Footer from "../components/Footer";
-import FileDetails from "../components/FileDetails";
+import Header from "../../components/Header";
+import Footer from "../../components/Footer";
+import FileDetails from "../../components/FileDetails";
 import { useQuery } from "@tanstack/react-query";
-import File from "../services/file";
-import ErrorBoundary from "../components/ErrorBoundary";
+import File from "../../services/file";
+import ErrorBoundary from "../../components/ErrorBoundary";
 
 function SingleFile() {
   const { fileId } = useParams();

@@ -1,4 +1,4 @@
-import styles from "./Header .module.css";
+import styles from "./Header.module.css";
 import { Link } from "react-router";
 import Button from "../Button";
 import useAuth from "../../hooks/useAuth";

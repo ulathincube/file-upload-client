@@ -1,8 +1,8 @@
-import Header from "../components/Header";
-import Footer from "../components/Footer";
-import File from "../services/file";
+import Header from "../../components/Header";
+import Footer from "../../components/Footer";
+import File from "../../services/file";
 import { useRef } from "react";
-import useNotification from "../hooks/useNotification";
+import useNotification from "../../hooks/useNotification";
 
 function UploadFile() {
   const fileInputRef = useRef();

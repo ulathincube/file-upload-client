@@ -1,16 +1,16 @@
 import { Link, useNavigate } from "react-router";
-import Auth from "../services/auth";
-import { useState, useEffect } from "react";
-import Header from "../components/Header";
-import Footer from "../components/Footer";
-import useAuth from "../hooks/useAuth";
-import useNotification from "../hooks/useNotification";
 import styles from "./Login.module.css";
-import Button from "../components/Button";
-import useLocalStorage from "../hooks/useLocalStorage";
+import Auth from "../../services/auth";
+import { useState, useEffect } from "react";
+import Header from "../../components/Header";
+import Footer from "../../components/Footer";
+import useAuth from "../../hooks/useAuth";
+import useNotification from "../../hooks/useNotification";
+import Button from "../../components/Button";
+import useLocalStorage from "../../hooks/useLocalStorage";
 import { useMutation } from "@tanstack/react-query";
-import Loading from "../components/Loading";
-import Error from "../components/Error";
+import Loading from "../../components/Loading";
+import Error from "../../components/Error";
 
 function Login() {
   const [email, setEmail] = useState("");
