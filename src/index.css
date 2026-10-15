@@ -105,15 +105,25 @@ ol {
   --font-stack: "Share Tech", Arial, Helvetica, "Segoe-UI", sans-serif;
   --font-size-large: 2rem;
   --font-size-medium: 1.5rem;
-  --font-size-default: 1rem;
+  --font-size-default: 1.1rem;
+
+  --font-weight-bold: 600;
+  --font-weight-superbold: 900;
 
   --theme-color: hsl(140deg 100% 40%);
   --text-color: hsl(140deg 10% 10%);
   --white: hsl(140deg 30% 95%);
   --link-color: hsl(170deg 100% 40%);
 
+  --spacing-5: 5px;
   --spacing-10: 10px;
   --spacing-20: 20px;
+  --spacing-40: 40px;
+  --spacing-80: 80px;
+
+  --radius-circle: 50%;
+
+  --icon-size: 20px;
 }
 
 body {
