@@ -27,7 +27,6 @@ body {
   font-size: 2.5rem;
   /* 5. Improve text rendering */
   -webkit-font-smoothing: antialiased;
-  font-family: "Reddit Sans", sans-serif;
   /* positioning */
   position: relative;
 }
@@ -99,10 +98,10 @@ h6 {
 
 .material-symbols-outlined {
   font-variation-settings:
-    "FILL" 1,
-    "wght" 400,
-    "GRAD" 0,
-    "opsz" 24;
+    'FILL' 1,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 24;
   font-size: 3.6rem;
   font-weight: 800;
 }
@@ -111,6 +110,14 @@ ul,
 ol {
   padding: 0;
   margin: 0;
+}
+
+:root {
+  --font-stack: 'Titillium Web', Arial, Helvetica, 'Segoe-UI', sans-serif;
+}
+
+body {
+  font-family: var(--font-stack);
 }
 
 @media screen and (max-width: 100em) {
