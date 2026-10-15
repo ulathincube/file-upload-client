@@ -6,6 +6,7 @@ import Auth from "../../services/auth";
 import useLocalStorage from "../../hooks/useLocalStorage";
 import useModal from "../../hooks/useModal";
 import useNotification from "../../hooks/useNotification";
+import Logo from "../Logo";
 
 function Header() {
   const { user, loginUser } = useAuth();
@@ -36,7 +37,7 @@ function Header() {
   return (
     <header className={styles.header}>
       <Link className={styles.box} to="/">
-        <h1 className={styles.logo}>File Uploader</h1>
+        <Logo />
       </Link>
       <nav>
         <ul className={styles.list}>

@@ -1,9 +1,9 @@
 .box {
   text-decoration: none;
-  color: orange;
+  color: var(--theme-color);
 }
 
 .logo {
-  font-size: 3.5rem;
-  font-weight: 800;
+  font-size: var(--font-size-large);
+  text-transform: uppercase;
 }
