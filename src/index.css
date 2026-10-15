@@ -103,13 +103,14 @@ ol {
 
 :root {
   --font-stack: "Share Tech", Arial, Helvetica, "Segoe-UI", sans-serif;
-  --font-size-large: 3rem;
-  --font-size-medium: 2rem;
+  --font-size-large: 2rem;
+  --font-size-medium: 1.5rem;
   --font-size-default: 1rem;
 
   --theme-color: hsl(140deg 100% 40%);
   --text-color: hsl(140deg 10% 10%);
   --white: hsl(140deg 30% 95%);
+  --link-color: hsl(170deg 100% 40%);
 
   --spacing-10: 10px;
   --spacing-20: 20px;
@@ -119,4 +120,5 @@ body {
   font-family: var(--font-stack);
   background-color: var(--white);
   color: var(--text-color);
+  padding: var(--spacing-10);
 }

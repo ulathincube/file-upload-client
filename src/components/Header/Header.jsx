@@ -36,9 +36,7 @@ function Header() {
 
   return (
     <header className={styles.header}>
-      <Link className={styles.box} to="/">
-        <Logo />
-      </Link>
+      <Logo />
       <nav>
         <ul className={styles.list}>
           <li className={styles.item}>

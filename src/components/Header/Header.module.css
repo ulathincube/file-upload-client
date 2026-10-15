@@ -4,26 +4,17 @@
   align-items: center;
 }
 
-.logo {
-  font-size: 3.5rem;
-  font-weight: 800;
-}
-
-.box {
-  text-decoration: none;
-  color: orange;
-}
-
 .list {
   list-style: none;
   display: flex;
   gap: 2rem;
   align-items: center;
+  font-size: var(--font-size-medium);
 }
 
 .link {
   text-decoration: none;
-  color: orange;
+  color: var(--link-color);
 }
 
 .logout {
@@ -47,29 +38,5 @@
   align-items: center;
   background-color: transparent;
   border: none;
-  color: orange;
-}
-
-@media screen and (max-width: 43.75em) {
-  .menu {
-    display: inline-block;
-    visibility: visible;
-    pointer-events: all;
-  }
-
-  .item {
-    display: none;
-    visibility: hidden;
-    pointer-events: none;
-  }
-}
-
-@media screen and (max-width: 37.5em) {
-  .logo {
-    font-size: 2.5rem;
-  }
-
-  .menu {
-    font-size: 2.4rem;
-  }
+  color: var(--link-color);
 }

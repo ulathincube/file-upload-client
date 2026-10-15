@@ -1,4 +1,5 @@
-.box {
+.link:link,
+.link:visited {
   text-decoration: none;
   color: var(--theme-color);
 }
