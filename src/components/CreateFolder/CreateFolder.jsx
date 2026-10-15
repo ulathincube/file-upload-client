@@ -1,14 +1,14 @@
-import Button from "../components/Button";
-import { useRef } from "react";
-import File from "../services/file";
-import { useQueryClient, useMutation } from "@tanstack/react-query";
-import Folders from "../components/Folders";
-import Folder from "../components/Folder";
-import Header from "../components/Header";
-import Footer from "../components/Footer";
-import StyledButton from "./StyledButton";
 import styles from "./CreateFolder.module.css";
-import useNotification from "../hooks/useNotification";
+import Button from "../Button";
+import { useRef } from "react";
+import File from "../../services/file";
+import { useQueryClient, useMutation } from "@tanstack/react-query";
+import Folders from "../Folders";
+import Folder from "../Folder";
+import Header from "../Header";
+import Footer from "../Footer";
+import StyledButton from "../StyledButton";
+import useNotification from "../../hooks/useNotification";
 
 function CreateFolder({ onToggle }) {
   const folderNameInputRef = useRef();

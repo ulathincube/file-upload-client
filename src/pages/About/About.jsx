@@ -1,7 +1,7 @@
-import Header from "../components/Header";
-import Footer from "../components/Footer";
 import styles from "./About.module.css";
-import Navigation from "../components/Navigation";
+import Header from "../../components/Header";
+import Footer from "../../components/Footer";
+import Navigation from "../../components/Navigation";
 import { Link } from "react-router";
 
 function About() {

@@ -1,7 +1,7 @@
-import { Link } from "react-router";
 import styles from "./Footer.module.css";
-import useAuth from "../hooks/useAuth";
-import Button from "./Button";
+import { Link } from "react-router";
+import useAuth from "../../hooks/useAuth";
+import Button from "../Button";
 
 function Footer() {
   const { user } = useAuth();

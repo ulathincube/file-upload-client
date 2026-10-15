@@ -1,9 +1,9 @@
-import File from "../services/file";
-import { useRef } from "react";
-import Button from "./Button";
 import styles from "./CreateFile.module.css";
-import StyledButton from "./StyledButton";
-import useNotification from "../hooks/useNotification";
+import File from "../../services/file";
+import { useRef } from "react";
+import Button from "../Button";
+import StyledButton from "../StyledButton";
+import useNotification from "../../hooks/useNotification";
 
 function CreateFile({ folder = null, onToggle }) {
   const fileInputRef = useRef();

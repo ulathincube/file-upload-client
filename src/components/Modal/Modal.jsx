@@ -1,12 +1,12 @@
 import styles from "./Modal.module.css";
 import { Link } from "react-router";
-import Logo from "./Logo";
-import Button from "./Button";
-import useModal from "../hooks/useModal";
-import useAuth from "../hooks/useAuth";
-import Auth from "../services/auth";
-import useLocalStorage from "../hooks/useLocalStorage";
-import useNotification from "../hooks/useNotification";
+import Logo from "../Logo";
+import Button from "../Button";
+import useModal from "../../hooks/useModal";
+import useAuth from "../../hooks/useAuth";
+import Auth from "../../services/auth";
+import useLocalStorage from "../../hooks/useLocalStorage";
+import useNotification from "../../hooks/useNotification";
 
 function Modal() {
   const [, toggleModal] = useModal();

@@ -1,6 +1,6 @@
 import styles from "./FileDetails.module.css";
 import { Link } from "react-router";
-import formatDate from "../utils/formatDate";
+import formatDate from "../../utils/formatDate";
 
 function FileDetails({ name, createdAt, id, size, url }) {
   const creationDate = formatDate(createdAt);

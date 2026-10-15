@@ -1,11 +1,11 @@
+import styles from "./Header .module.css";
 import { Link } from "react-router";
-import styles from "./Header.module.css";
-import Button from "./Button";
-import useAuth from "../hooks/useAuth";
-import Auth from "../services/auth";
-import useLocalStorage from "../hooks/useLocalStorage";
-import useModal from "../hooks/useModal";
-import useNotification from "../hooks/useNotification";
+import Button from "../Button";
+import useAuth from "../../hooks/useAuth";
+import Auth from "../../services/auth";
+import useLocalStorage from "../../hooks/useLocalStorage";
+import useModal from "../../hooks/useModal";
+import useNotification from "../../hooks/useNotification";
 
 function Header() {
   const { user, loginUser } = useAuth();
