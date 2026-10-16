@@ -48,6 +48,6 @@
   }
 
   .description {
-    --font-size-medium: 1rem;
+    --font-size-medium: var(--font-size-default);
   }
 }

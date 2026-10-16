@@ -9,24 +9,76 @@ function Footer() {
 
   return (
     <footer className={styles.footer}>
-      <Logo />
-      <nav>
-        <ul className={styles.list}>
-          <li className={styles.pick}>
-            {user ? (
-              <Button className={styles.logout}>Log Out</Button>
-            ) : (
-              <Link className={styles.link} to="/login">
-                Log In
+      <div className={styles.container}>
+        <Logo />
+        <p className={styles.description}>
+          Upload and share files with anyone in just a few clicks
+        </p>
+        <p className={styles.reserved}>
+          &copy; {new Date().getFullYear()} FileUploader. All Rights reserved.
+        </p>
+      </div>
+      <nav className={styles.navigation}>
+        <article className={styles.box}>
+          <h3 className={styles.title}>Company</h3>
+          <ul className={styles.list}>
+            <li className={styles.item}>
+              <Link to="/" className={styles.link}>
+                Features
               </Link>
-            )}
-          </li>
-          <li>
-            <Link className={styles.link} to="/about">
-              About Us
-            </Link>
-          </li>
-        </ul>
+            </li>
+            <li className={styles.item}>
+              <Link to="/" className={styles.link}>
+                Features
+              </Link>
+            </li>
+            <li className={styles.item}>
+              <Link to="/" className={styles.link}>
+                Features
+              </Link>
+            </li>
+          </ul>
+        </article>
+        <article className={styles.box}>
+          <h3 className={styles.title}>Product</h3>
+          <ul className={styles.list}>
+            <li className={styles.item}>
+              <Link to="/" className={styles.link}>
+                Features
+              </Link>
+            </li>
+            <li className={styles.item}>
+              <Link to="/" className={styles.link}>
+                Features
+              </Link>
+            </li>
+            <li className={styles.item}>
+              <Link to="/" className={styles.link}>
+                Features
+              </Link>
+            </li>
+          </ul>
+        </article>
+        <article className={styles.box}>
+          <h3 className={styles.title}>Resources</h3>
+          <ul className={styles.list}>
+            <li className={styles.item}>
+              <Link to="/" className={styles.link}>
+                Features
+              </Link>
+            </li>
+            <li className={styles.item}>
+              <Link to="/" className={styles.link}>
+                Features
+              </Link>
+            </li>
+            <li className={styles.item}>
+              <Link to="/" className={styles.link}>
+                Features
+              </Link>
+            </li>
+          </ul>
+        </article>
       </nav>
     </footer>
   );
