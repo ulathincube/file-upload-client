@@ -1,12 +1,9 @@
 import styles from "./Footer.module.css";
 import { Link } from "react-router";
-import useAuth from "../../hooks/useAuth";
 import Button from "../Button";
 import Logo from "../Logo";
 
 function Footer() {
-  const { user } = useAuth();
-
   return (
     <footer className={styles.footer}>
       <div className={styles.container}>
@@ -24,17 +21,17 @@ function Footer() {
           <ul className={styles.list}>
             <li className={styles.item}>
               <Link to="/" className={styles.link}>
-                Features
+                About Us
               </Link>
             </li>
             <li className={styles.item}>
               <Link to="/" className={styles.link}>
-                Features
+                Contact
               </Link>
             </li>
             <li className={styles.item}>
               <Link to="/" className={styles.link}>
-                Features
+                Learn More
               </Link>
             </li>
           </ul>
@@ -49,12 +46,12 @@ function Footer() {
             </li>
             <li className={styles.item}>
               <Link to="/" className={styles.link}>
-                Features
+                Docs
               </Link>
             </li>
             <li className={styles.item}>
               <Link to="/" className={styles.link}>
-                Features
+                For Developers
               </Link>
             </li>
           </ul>
@@ -64,17 +61,17 @@ function Footer() {
           <ul className={styles.list}>
             <li className={styles.item}>
               <Link to="/" className={styles.link}>
-                Features
+                FAQ
               </Link>
             </li>
             <li className={styles.item}>
               <Link to="/" className={styles.link}>
-                Features
+                Blog
               </Link>
             </li>
             <li className={styles.item}>
               <Link to="/" className={styles.link}>
-                Features
+                Glossary
               </Link>
             </li>
           </ul>
