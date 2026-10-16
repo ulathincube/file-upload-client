@@ -5,6 +5,7 @@ import { useState } from "react";
 function Auth() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [showPassword, setShowPassword] = useState(false);
 
   const onEmailChange = (event) => {
     setEmail(event.target.value);
@@ -44,10 +45,16 @@ function Auth() {
               onChange={onPasswordChange}
               required={true}
               className={styles.field}
-              type={password ? "password" : "text"}
+              type={!password || showPassword ? "text" : "password"}
               id="password"
               placeholder="Password"
             />
+            <button
+              onClick={() => setShowPassword(!showPassword)}
+              className={styles.show}
+            >
+              {showPassword ? "Hide" : "Show"}
+            </button>
           </div>
           <div className={styles.container}>
             <button className={styles.action}>Sign In</button>

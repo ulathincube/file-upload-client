@@ -51,6 +51,22 @@
   font-size: var(--font-size-medium);
 }
 
+.group:nth-child(2) {
+  position: relative;
+}
+
+.show {
+  position: absolute;
+  top: 73%;
+  right: 0;
+  border: none;
+  background-color: transparent;
+  /* color: var(--gray); */
+  transform: translate(-50%, -50%);
+  font-size: var(--font-size-default);
+  font-weight: var(--font-weight-bold);
+}
+
 .field:user-invalid {
   border: 2px solid var(--alarm-color);
 }
