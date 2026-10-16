@@ -6,7 +6,7 @@ function Auth() {
     <main className={styles.wrapper}>
       <section className={styles.parent}>
         <article className={styles.article}>
-          <h1 className={styles.title}>Welcome back</h1>
+          <h1 className={styles.title}>Welcome back.</h1>
         </article>
         <form className={styles.form}>
           <div className={styles.group}>

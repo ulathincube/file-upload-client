@@ -115,6 +115,10 @@
   .field {
     --font-size-medium: 1.2rem;
   }
+
+  .link {
+    font-size: var(--font-size-default);
+  }
 }
 
 @media screen and (max-width: 31.25rem) {
@@ -130,7 +134,7 @@
     --font-size-large: 1.2rem;
   }
 
-  .label {
-    /* font-weight: var(--font-weight-default); */
+  .field {
+    padding: var(--spacing-10);
   }
 }
