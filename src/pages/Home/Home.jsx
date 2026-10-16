@@ -4,6 +4,7 @@ import Navigation from "../../components/Navigation";
 import Hero from "../../components/Hero";
 import Footer from "../../components/Footer";
 import { Link } from "react-router";
+import Features from "../../components/Features";
 
 function Home() {
   return (
@@ -11,6 +12,7 @@ function Home() {
       <Header />
       <Navigation />
       <Hero />
+      <Features />
       <Footer />
     </>
   );

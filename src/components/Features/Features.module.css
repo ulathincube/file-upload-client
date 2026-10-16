@@ -1,0 +1,10 @@
+.wrapper {
+  display: flex;
+  gap: var(--spacing-20);
+  padding-top: var(--spacing-40);
+}
+
+.icon {
+  width: var(--icon-size-large);
+  height: var(--icon-size-large);
+}

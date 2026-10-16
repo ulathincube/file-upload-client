@@ -114,6 +114,7 @@ ol {
   --text-color: hsl(140deg 10% 10%);
   --white: hsl(140deg 30% 95%);
   --link-color: hsl(170deg 100% 40%);
+  --gray: hsl(140deg 10% 80%);
 
   --spacing-5: 5px;
   --spacing-10: 10px;
@@ -122,8 +123,11 @@ ol {
   --spacing-80: 80px;
 
   --radius-circle: 50%;
+  --radius-10: 10px;
+  --radius-20: 20px;
 
-  --icon-size: 20px;
+  --icon-size-large: 48px;
+  --icon-size: 24px;
 }
 
 body {

@@ -4,7 +4,7 @@ function Feature({ title, children, body }) {
   return (
     <article className={styles.wrapper}>
       <div className={styles.box}>{children}</div>
-      <h3 className={styles.heading}>{title}</h3>
+      <h3 className={styles.title}>{title}</h3>
       <p className={styles.description}>{body}</p>
     </article>
   );
