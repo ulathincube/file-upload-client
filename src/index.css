@@ -77,10 +77,25 @@ h6 {
   isolation: isolate;
 }
 
-#root {
+#root,
+#modal {
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
+  min-height: 100%;
+}
+
+#modal {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: none;
+  visibility: hidden;
+  pointer-events: none;
+  width: 100%;
+}
+
+body {
+  position: relative;
 }
 
 /*  11. Material Icons */
@@ -116,7 +131,7 @@ ol {
   --white: hsl(140deg 30% 95%);
   --link-color: hsl(170deg 100% 40%);
   --gray: hsl(140deg 10% 80%);
-
+  --overlay: hsl(140deg 10% 10% / 0.9);
   --spacing-5: 5px;
   --spacing-10: 10px;
   --spacing-20: 20px;

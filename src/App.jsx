@@ -1,5 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router";
-import Home from './pages/Home'
+import Home from "./pages/Home";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 import Uploads from "./pages/Uploads";
@@ -12,13 +12,14 @@ import AuthContext from "./context/AuthContext";
 import Protected from "./components/Protected";
 import NotificationContext from "./context/NotificationContext";
 import ModalContext from "./context/ModalContext";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Notification from "./components/Notification";
 import Error from "./components/Error";
 import useLocalStorage from "./hooks/useLocalStorage";
-
-import { createPortal } from "react-dom";
+import MobileMenu from "./components/MobileMenu";
 import Modal from "./components/Modal";
+
+const container = document.querySelector("#modal");
 
 function App() {
   const queryClient = new QueryClient();
@@ -27,8 +28,26 @@ function App() {
 
   const [showModal, setShowModal] = useState(false);
 
-  const onToggleShowModal = () => {
-    setShowModal(!showModal);
+  useEffect(() => {
+    if (showModal) {
+      container.style.visibility = "visible";
+      container.style.pointerEvents = "all";
+      container.style.display = "flex";
+    }
+
+    return () => {
+      container.style.visibility = "hidden";
+      container.style.pointerEvents = "none";
+      container.style.display = "none";
+    };
+  }, [showModal]);
+
+  const onShowModal = () => {
+    setShowModal(true);
+  };
+
+  const onHideModal = () => {
+    setShowModal(false);
   };
 
   const loginUser = (userObject) => {
@@ -42,7 +61,7 @@ function App() {
 
   return (
     <AuthContext value={{ user, loginUser }}>
-      <ModalContext value={[showModal, onToggleShowModal]}>
+      <ModalContext value={{ showModal, onShowModal, onHideModal }}>
         <NotificationContext
           value={{
             message,
@@ -52,8 +71,7 @@ function App() {
           <QueryClientProvider client={queryClient}>
             <Notification />
             <Router>
-              {showModal &&
-                createPortal(<Modal />, document.getElementById("root"))}
+              {showModal && <MobileMenu />}
               <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="login" element={<Login />} />

@@ -14,7 +14,7 @@ function Header() {
   const { createNotificationMessage } = useNotification();
 
   const [, setUserStore] = useLocalStorage("user", null);
-  const [, toggleModal] = useModal();
+  const { onShowModal } = useModal();
 
   const logoutUserHandler = async () => {
     try {
@@ -28,10 +28,6 @@ function Header() {
     } catch (error) {
       createNotificationMessage(error);
     }
-  };
-
-  const onShowModal = () => {
-    toggleModal();
   };
 
   return (
@@ -55,15 +51,15 @@ function Header() {
               Upload File
             </Link>
           </li>
-          <li className={styles.menu}>
+          {/* <li className={styles.menu}>
             <Button onClick={onShowModal} className={styles.open}>
               <span className="material-symbols-outlined">dehaze</span>
             </Button>
-          </li>
+          </li> */}
         </ul>
       </nav>
       <div className={styles.menu}>
-        <button className={styles.action}>
+        <button onClick={onShowModal} className={styles.action}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="24"
