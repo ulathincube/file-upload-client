@@ -103,6 +103,7 @@ ol {
 
 :root {
   --font-stack: "Share Tech", Arial, Helvetica, "Segoe-UI", sans-serif;
+  --font-size-superlarge: 4rem;
   --font-size-large: 2rem;
   --font-size-medium: 1.5rem;
   --font-size-default: 1.1rem;

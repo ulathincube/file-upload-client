@@ -6,7 +6,7 @@
 }
 
 .heading {
-  font-size: var(--font-size-large);
+  font-size: var(--font-size-superlarge);
   font-weight: var(--font-weight-superbold);
 }
 
@@ -19,7 +19,7 @@
 }
 
 .action {
-  font-size: var(--font-size-default);
+  font-size: var(--font-size-medium);
   display: flex;
   align-items: center;
   gap: var(--spacing-5);

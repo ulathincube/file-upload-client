@@ -5,14 +5,15 @@ import Hero from "../../components/Hero";
 import Footer from "../../components/Footer";
 import { Link } from "react-router";
 import Features from "../../components/Features";
+import CallToAction from "../../components/CallToAction";
 
 function Home() {
   return (
     <>
       <Header />
-      <Navigation />
       <Hero />
       <Features />
+      <CallToAction />
       <Footer />
     </>
   );

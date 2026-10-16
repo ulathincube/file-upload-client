@@ -1,7 +1,7 @@
 .wrapper {
   display: flex;
   gap: var(--spacing-20);
-  padding-top: var(--spacing-40);
+  padding-top: var(--spacing-80);
 }
 
 .icon {
