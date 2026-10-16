@@ -1,7 +1,19 @@
 import styles from "./AuthLogin.module.css";
 import { Link } from "react-router";
+import { useState } from "react";
 
 function Auth() {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  const onEmailChange = (event) => {
+    setEmail(event.target.value);
+  };
+
+  const onPasswordChange = (event) => {
+    setPassword(event.target.value);
+  };
+
   return (
     <main className={styles.wrapper}>
       <section className={styles.parent}>
@@ -14,6 +26,9 @@ function Auth() {
               Email address
             </label>
             <input
+              value={email}
+              onChange={onEmailChange}
+              required={true}
               className={styles.field}
               type="email"
               id="email"
@@ -25,8 +40,11 @@ function Auth() {
               Password
             </label>
             <input
+              value={password}
+              onChange={onPasswordChange}
+              required={true}
               className={styles.field}
-              type="text"
+              type={password ? "password" : "text"}
               id="password"
               placeholder="Password"
             />

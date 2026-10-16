@@ -51,6 +51,14 @@
   font-size: var(--font-size-medium);
 }
 
+.field:user-invalid {
+  border: 2px solid var(--alarm-color);
+}
+
+.field:user-valid {
+  border: 2px solid var(--theme-color);
+}
+
 .link {
   font-size: var(--font-size-medium);
 }
