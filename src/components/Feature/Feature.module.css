@@ -17,3 +17,37 @@
 .description {
   font-size: var(--font-size-medium);
 }
+
+@media screen and (max-width: 81.25rem) {
+  .title {
+    --font-size-large: 1.8rem;
+  }
+
+  .description {
+    --font-size-medium: 1.3rem;
+  }
+}
+
+@media screen and (max-width: 62.5rem) {
+  .title {
+    --font-size-large: 1.5rem;
+  }
+
+  .description {
+    --font-size-medium: 1.2rem;
+  }
+}
+
+@media screen and (max-width: 50rem) {
+  .wrapper {
+    padding: var(--spacing-10);
+  }
+
+  .title {
+    --font-size-large: 1.3rem;
+  }
+
+  .description {
+    --font-size-medium: 1rem;
+  }
+}

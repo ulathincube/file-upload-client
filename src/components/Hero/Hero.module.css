@@ -8,6 +8,7 @@
 .heading {
   font-size: var(--font-size-superlarge);
   font-weight: var(--font-weight-superbold);
+  text-wrap: wrap;
 }
 
 .description {
@@ -34,4 +35,30 @@
 .icon {
   width: var(--icon-size);
   height: var(--icon-size);
+}
+
+@media screen and (max-width: 81.25rem) {
+  .heading {
+    --font-size-superlarge: 3rem;
+  }
+}
+
+@media screen and (max-width: 62.5rem) {
+  .heading {
+    --font-size-superlarge: 2rem;
+  }
+
+  .action {
+    --font-size-medium: 1.3rem;
+  }
+}
+
+@media screen and (max-width: 37.5rem) {
+  .heading {
+    --font-size-superlarge: 1.8rem;
+  }
+
+  .action {
+    --font-size-medium: 1.2rem;
+  }
 }

@@ -8,3 +8,20 @@
   width: var(--icon-size-large);
   height: var(--icon-size-large);
 }
+
+@media screen and (max-width: 62.5rem) {
+  .wrapper {
+    gap: var(--spacing-10);
+  }
+
+  .icon {
+    width: var(--icon-size);
+    height: var(--icon-size);
+  }
+}
+
+@media screen and (max-width: 37.5rem) {
+  .wrapper {
+    flex-direction: column;
+  }
+}

@@ -40,3 +40,29 @@
   border: none;
   color: var(--link-color);
 }
+
+@media screen and (max-width: 37.5rem) {
+  .navigation {
+    display: none;
+    visibility: hidden;
+    pointer-events: none;
+  }
+
+  .menu {
+    display: flex;
+    visibility: visible;
+    pointer-events: all;
+  }
+
+  .action {
+    border: none;
+    background-color: transparent;
+  }
+
+  .icon {
+    color: var(--theme-color);
+    width: var(--icon-size);
+    height: var(--icon-size);
+    stroke-width: 2.5;
+  }
+}

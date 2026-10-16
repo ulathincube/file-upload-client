@@ -1,10 +1,29 @@
+.link {
+  font-size: var(--font-size-large);
+  text-transform: uppercase;
+  font-weight: var(--font-weight-bold);
+}
+
 .link:link,
 .link:visited {
   text-decoration: none;
   color: var(--theme-color);
 }
 
-.logo {
-  font-size: var(--font-size-large);
-  text-transform: uppercase;
+@media screen and (max-width: 81.25rem) {
+  .link {
+    --font-size-large: 1.8rem;
+  }
+}
+
+@media screen and (max-width: 37.5rem) {
+  .link {
+    --font-size-large: 1.6rem;
+  }
+}
+
+@media screen and (max-width: 25rem) {
+  .link {
+    --font-size-large: 1.5rem;
+  }
 }

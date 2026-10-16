@@ -7,6 +7,7 @@
 
 .title {
   font-size: var(--font-size-large);
+  text-wrap: wrap;
 }
 
 .action {
@@ -29,4 +30,14 @@
 
 .container {
   max-width: fit-content;
+}
+
+@media screen and (max-width: 37.5rem) {
+  .title {
+    --font-size-large: 1.8rem;
+  }
+
+  .action {
+    --font-size-medium: 1.2rem;
+  }
 }
