@@ -139,8 +139,11 @@ ol {
   --spacing-80: 80px;
 
   --radius-circle: 50%;
+  --radius-5: 5px;
   --radius-10: 10px;
   --radius-20: 20px;
+  --radius-25: 25px;
+  --radius-50: 50px;
 
   --icon-size-large: 48px;
   --icon-size: 24px;

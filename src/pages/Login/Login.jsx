@@ -11,6 +11,7 @@ import useLocalStorage from "../../hooks/useLocalStorage";
 import { useMutation } from "@tanstack/react-query";
 import Loading from "../../components/Loading";
 import Error from "../../components/Error";
+import AuthLogin from "../../components/AuthLogin";
 
 function Login() {
   const [email, setEmail] = useState("");
@@ -61,13 +62,7 @@ function Login() {
 
   if (isPending) return <Loading />;
 
-  return (
-    <>
-      <Header />
-
-      <Footer />
-    </>
-  );
+  return <AuthLogin />;
 }
 
 export default Login;
