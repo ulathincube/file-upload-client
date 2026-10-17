@@ -1,4 +1,5 @@
 import styles from "./AuthRegister.module.css";
+import RegisterSuccess from "../RegisterSuccess";
 import { useState } from "react";
 
 function FirstGroup({ onEmailChange, onUsernameChange, username, email }) {
@@ -83,6 +84,7 @@ function AuthRegister() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
+  const [isRegistered, setIsRegistered] = useState(true);
 
   const onUsernameChange = (event) => {
     setUsername(event.target.value);
@@ -114,7 +116,10 @@ function AuthRegister() {
       password,
     };
     console.log(userDetails);
+    setIsRegistered(true);
   };
+
+  if (isRegistered) return <RegisterSuccess />;
 
   return (
     <main className={styles.wrapper}>

@@ -94,6 +94,11 @@ h6 {
   width: 100%;
 }
 
+html,
+body {
+  height: 100%;
+}
+
 body {
   position: relative;
 }
@@ -130,14 +135,16 @@ ol {
   --text-color: hsl(140deg 10% 10%);
   --white: hsl(140deg 10% 95%);
   --link-color: hsl(170deg 100% 40%);
-  --gray: hsl(140deg 10% 80%);
+  --gray: hsl(140deg 10% 60%);
   --alarm-color: hsl(330deg 100% 50%);
   --overlay: hsl(140deg 10% 10% / 0.9);
 
   --spacing-5: 5px;
   --spacing-10: 10px;
   --spacing-20: 20px;
+  --spacing-30: 30px;
   --spacing-40: 40px;
+  --spacing-60: 60px;
   --spacing-80: 80px;
 
   --radius-circle: 50%;
