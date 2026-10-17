@@ -167,9 +167,83 @@ function MyFiles() {
             </article>
           )}
         </div>
-        <article className={styles.display}></article>
+        <article className={styles.display}>
+          <h3 className={styles.summary}>My Files</h3>
+          <section className={styles.files}>
+            <article className={styles.parts}>
+              <div className={styles.box}>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  className={styles.big}
+                >
+                  <path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path>
+                  <polyline points="13 2 13 9 20 9"></polyline>
+                </svg>
+              </div>
+              <p className={styles.bold}>It's Empty</p>
+              <p className={styles.text}>
+                Drag and drop your files into this area or click add
+              </p>
+            </article>
+          </section>
+          <button className={styles.mobile}>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              className={styles.icon}
+            >
+              <line x1="12" y1="5" x2="12" y2="19"></line>
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+            </svg>
+          </button>
+        </article>
       </main>
-      <aside className={styles.right}>D</aside>
+      <aside className={styles.right}>
+        <div className={styles.box}>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            className={styles.icon}
+          >
+            <path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"></path>
+          </svg>
+        </div>
+        <article className={styles.details}>
+          <h3 className={styles.heading}>My Files</h3>
+          <dl className={styles.list}>
+            <div className={styles.item}>
+              <dt className={styles.tag}>Type</dt>
+              <dd className={styles.description}>Cloud Storage</dd>
+            </div>
+            <div className={styles.item}>
+              <dt className={styles.tag}>Size</dt>
+              <dd className={styles.description}>0 MB / 3.0 GB</dd>
+            </div>
+          </dl>
+        </article>
+      </aside>
     </main>
   );
 }

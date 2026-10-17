@@ -135,9 +135,10 @@ ol {
   --text-color: hsl(140deg 10% 10%);
   --white: hsl(140deg 10% 95%);
   --light-gray: hsl(150deg 10% 92%);
+  --dark-gray: hsl(150deg 10% 90%);
   --black: hsl(140deg 10% 5%);
   --link-color: hsl(170deg 100% 40%);
-  --gray: hsl(140deg 10% 60%);
+  --gray: hsl(140deg 5% 70%);
   --alarm-color: hsl(330deg 100% 50%);
   --overlay: hsl(140deg 10% 10% / 0.85);
 
@@ -158,6 +159,7 @@ ol {
 
   --icon-size-large: 48px;
   --icon-size: 24px;
+  --icon-size-small: 16px;
 
   --blur: 5px;
 }
