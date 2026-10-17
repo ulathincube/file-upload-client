@@ -16,6 +16,7 @@ import StyledButton from "../../components/StyledButton";
 import Error from "../../components/Error";
 import Loading from "../../components/Loading";
 import Navigation from "../../components/Navigation";
+import MyFiles from "../../components/MyFiles";
 
 function Uploads() {
   // const folderNameInputRef = useRef();
@@ -61,59 +62,61 @@ function Uploads() {
   //   }
   // };
 
-  if (isPending) return <Loading />;
+  // if (isPending) return <Loading />;
 
-  if (isError) {
-    console.log(isError, error);
-    return <Error error={error} />;
-  }
+  // if (isError) {
+  //   console.log(isError, error);
+  //   return <Error error={error} />;
+  // }
 
-  // [{name, id, files: []}]
+  // // [{name, id, files: []}]
 
-  const { data: serverData } = data;
+  // const { data: serverData } = data;
 
-  const filesData = serverData.map(({ id, name, files }) => {
-    if (name === "/")
-      return (
-        <Fragment key={id}>
-          {files.map((fileObject) => (
-            <CurrentFile
-              key={fileObject.id}
-              name={fileObject.name}
-              fileId={fileObject.id}
-            />
-          ))}
-        </Fragment>
-      );
-    return <Folder key={id} name={name} />;
-  });
+  // const filesData = serverData.map(({ id, name, files }) => {
+  //   if (name === "/")
+  //     return (
+  //       <Fragment key={id}>
+  //         {files.map((fileObject) => (
+  //           <CurrentFile
+  //             key={fileObject.id}
+  //             name={fileObject.name}
+  //             fileId={fileObject.id}
+  //           />
+  //         ))}
+  //       </Fragment>
+  //     );
+  //   return <Folder key={id} name={name} />;
+  // });
 
-  return (
-    <>
-      <Header />
-      <Navigation current="uploads" />
-      <ErrorBoundary fallback={<h1>filesData not rendering correctly</h1>}>
-        <CurrentFiles>{filesData}</CurrentFiles>
-      </ErrorBoundary>
-      <section className={styles.actions}>
-        {showCreateFile ? (
-          <CreateFile onToggle={onToggleShowCreateFile} />
-        ) : (
-          <StyledButton onClick={onToggleShowCreateFile}>
-            Upload File
-          </StyledButton>
-        )}
-        {showForm ? (
-          <CreateFolder onToggle={onToggleShowForm} />
-        ) : (
-          <StyledButton onClick={onToggleShowForm}>
-            Create A New Folder
-          </StyledButton>
-        )}
-      </section>
-      <Footer />
-    </>
-  );
+  // return (
+  //   <>
+  //     <Header />
+  //     <Navigation current="uploads" />
+  //     <ErrorBoundary fallback={<h1>filesData not rendering correctly</h1>}>
+  //       <CurrentFiles>{filesData}</CurrentFiles>
+  //     </ErrorBoundary>
+  //     <section className={styles.actions}>
+  //       {showCreateFile ? (
+  //         <CreateFile onToggle={onToggleShowCreateFile} />
+  //       ) : (
+  //         <StyledButton onClick={onToggleShowCreateFile}>
+  //           Upload File
+  //         </StyledButton>
+  //       )}
+  //       {showForm ? (
+  //         <CreateFolder onToggle={onToggleShowForm} />
+  //       ) : (
+  //         <StyledButton onClick={onToggleShowForm}>
+  //           Create A New Folder
+  //         </StyledButton>
+  //       )}
+  //     </section>
+  //     <Footer />
+  //   </>
+  // );
+
+  return <MyFiles />;
 }
 
 export default Uploads;
