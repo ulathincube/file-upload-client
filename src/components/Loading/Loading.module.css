@@ -1,44 +1,46 @@
-.loading {
-  animation: 1s ease-in 100ms infinite reverse both loading;
+.wrapper {
   display: flex;
   flex-direction: column;
-  font-weight: 600;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+  width: 100%;
+}
+
+.parent {
+  display: flex;
+  flex: 1;
+  width: 100%;
   align-items: center;
   justify-content: center;
-  min-height: 100vh;
-  font-size: 3.5rem;
-  color: orange;
+  flex-direction: column;
+  gap: var(--spacing-20);
+  /* background-color: var(--overlay);
+  backdrop-filter: blur(var(--blur)); */
 }
 
-.spinner {
-  animation: 1s ease-in 100ms infinite spinner;
-  transform-origin: center;
+.title {
+  color: var(--text-color);
 }
 
-@keyframes loading {
-  0% {
-    opacity: 0;
-  }
-
-  50% {
-    opacity: 1;
-  }
-
-  100% {
-    opacity: 0;
-  }
+.title {
+  font-size: var(--font-size-medium);
+  font-weight: var(--font-weight-default);
 }
 
-@keyframes spinner {
-  0% {
-    transform: rotate(0.5turn);
+.icon {
+  width: var(--icon-size-large);
+  height: var(--icon-size-large);
+  fill: var(--text-color);
+  animation: spin 500ms linear both infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0turn);
   }
 
-  50% {
-    transform: rotate(0.75turn);
-  }
-
-  100% {
+  to {
     transform: rotate(1turn);
   }
 }

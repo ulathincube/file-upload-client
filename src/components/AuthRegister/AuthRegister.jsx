@@ -84,7 +84,7 @@ function AuthRegister() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
-  const [isRegistered, setIsRegistered] = useState(true);
+  const [isRegistered, setIsRegistered] = useState(false);
 
   const onUsernameChange = (event) => {
     setUsername(event.target.value);

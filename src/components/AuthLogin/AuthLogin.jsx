@@ -1,6 +1,7 @@
 import styles from "./AuthLogin.module.css";
 import { Link } from "react-router";
 import { useState } from "react";
+import Loading from "../Loading";
 
 function Auth() {
   const [email, setEmail] = useState("");
@@ -14,6 +15,8 @@ function Auth() {
   const onPasswordChange = (event) => {
     setPassword(event.target.value);
   };
+
+  // return <Loading title="Trying to sign you in" />;
 
   return (
     <main className={styles.wrapper}>
