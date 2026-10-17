@@ -1,6 +1,17 @@
 import styles from "./MyFiles.module.css";
+import { useState } from "react";
 
 function MyFiles() {
+  const [showContextMenu, setShowContextMenu] = useState(false);
+
+  const onShowContextMenu = () => {
+    setShowContextMenu(true);
+  };
+
+  const onHideContextMenu = () => {
+    setShowContextMenu(false);
+  };
+
   return (
     <main className={styles.wrapper}>
       <aside className={styles.left}>
@@ -72,7 +83,7 @@ function MyFiles() {
       </header>
       <main className={styles.main}>
         <div className={styles.container}>
-          <button className={styles.action}>
+          <button onClick={onShowContextMenu} className={styles.action}>
             <span className={styles.parent}>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -92,13 +103,19 @@ function MyFiles() {
             </span>
             <span className={styles.text}>Add</span>
           </button>
-          <article className={styles.context}>
-            <button className={styles.pick}>New Folder</button>
-
-            <button className={styles.pick}>File Upload</button>
-
-            <button className={styles.pick}>Folder Upload</button>
-          </article>
+          {showContextMenu && (
+            <article className={styles.context}>
+              <button onClick={onHideContextMenu} className={styles.pick}>
+                New Folder
+              </button>
+              <button onClick={onHideContextMenu} className={styles.pick}>
+                File Upload
+              </button>
+              <button onClick={onHideContextMenu} className={styles.pick}>
+                Folder Upload
+              </button>
+            </article>
+          )}
         </div>
         <article className={styles.display}></article>
       </main>
