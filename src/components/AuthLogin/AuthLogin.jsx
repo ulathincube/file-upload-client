@@ -21,9 +21,7 @@ function Auth() {
   };
 
   const loginMutation = useMutation({
-    mutationFn: () => {
-      Authentication.loginUser(email, password);
-    },
+    mutationFn: () => Authentication.loginUser(email, password),
   });
 
   const onAuthLogin = (event) => {

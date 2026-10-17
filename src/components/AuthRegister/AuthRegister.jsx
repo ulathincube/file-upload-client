@@ -1,6 +1,9 @@
 import styles from "./AuthRegister.module.css";
 import RegisterSuccess from "../RegisterSuccess";
 import { useState } from "react";
+import { useMutation } from "@tanstack/react-query";
+import Authentication from "../../services/auth";
+import Loading from "../Loading";
 
 function FirstGroup({ onEmailChange, onUsernameChange, username, email }) {
   return (
@@ -108,16 +111,21 @@ function AuthRegister() {
     }
   };
 
+  const registerMutation = useMutation({
+    mutationFn: () => Authentication.registerUser(username, email, password),
+    retry: 1,
+    onSuccess: () => {
+      setIsRegistered(true);
+    },
+  });
+
   const onFormSubmit = (event) => {
     event.preventDefault();
-    const userDetails = {
-      username,
-      email,
-      password,
-    };
-    console.log(userDetails);
-    setIsRegistered(true);
+    registerMutation.mutate();
   };
+
+  if (registerMutation.isPending)
+    return <Loading title="Trying to create your account" />;
 
   if (isRegistered) return <RegisterSuccess />;
 
