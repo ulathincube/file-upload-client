@@ -120,7 +120,7 @@ function AuthRegister() {
     <main className={styles.wrapper}>
       <section className={styles.parent}>
         <article className={styles.article}>
-          <h1 className={styles.title}>Register an account.</h1>
+          <h1 className={styles.title}>Hey there.</h1>
         </article>
         <form onSubmit={onFormSubmit} className={styles.form}>
           {!userDetails ? (
