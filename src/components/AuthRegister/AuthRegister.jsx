@@ -119,7 +119,7 @@ function AuthRegister() {
     },
   });
 
-  const onFormSubmit = (event) => {
+  const onAuthRegister = (event) => {
     event.preventDefault();
     registerMutation.mutate();
   };
@@ -135,7 +135,7 @@ function AuthRegister() {
         <article className={styles.article}>
           <h1 className={styles.title}>Hey there.</h1>
         </article>
-        <form onSubmit={onFormSubmit} className={styles.form}>
+        <form onSubmit={onAuthRegister} className={styles.form}>
           {!userDetails ? (
             <FirstGroup
               username={username}

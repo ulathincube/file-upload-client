@@ -29,8 +29,6 @@ function Auth() {
     loginMutation.mutate();
   };
 
-  console.log({ ...loginMutation });
-
   if (loginMutation.isPending) return <Loading title="Trying to sign you in" />;
 
   return (
