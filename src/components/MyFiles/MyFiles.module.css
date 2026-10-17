@@ -45,12 +45,6 @@
   gap: var(--spacing-60);
 }
 
-.mobile {
-  display: none;
-  visibility: hidden;
-  pointer-events: none;
-}
-
 .container {
   display: flex;
   flex-basis: 200px;
@@ -268,30 +262,6 @@
     position: relative;
     justify-content: revert;
     gap: var(--spacing-60);
-  }
-
-  .mobile {
-    display: flex;
-    visibility: visible;
-    pointer-events: all;
-
-    background-color: var(--black);
-    color: var(--white);
-    justify-content: center;
-    align-items: center;
-    width: 50px;
-    height: 50px;
-    border-radius: var(--radius-circle);
-    border: none;
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  }
-
-  .mobile .icon {
-    width: var(--icon-size);
-    height: var(--icon-size);
   }
 
   .left {
