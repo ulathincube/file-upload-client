@@ -104,4 +104,6 @@
   background-color: transparent;
   font-size: var(--font-size-default);
   text-align: left;
+  display: flex;
+  gap: var(--spacing-5);
 }
