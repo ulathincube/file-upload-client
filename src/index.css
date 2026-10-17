@@ -128,7 +128,7 @@ ol {
 
   --theme-color: hsl(140deg 100% 40%);
   --text-color: hsl(140deg 10% 10%);
-  --white: hsl(140deg 30% 95%);
+  --white: hsl(140deg 10% 95%);
   --link-color: hsl(170deg 100% 40%);
   --gray: hsl(140deg 10% 80%);
   --alarm-color: hsl(330deg 100% 50%);
