@@ -1,6 +1,6 @@
 import { Link, useNavigate } from "react-router";
 import styles from "./Login.module.css";
-import Auth from "../../services/auth";
+import Authentication from "../../services/auth";
 import { useState, useEffect } from "react";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
@@ -14,53 +14,53 @@ import Error from "../../components/Error";
 import AuthLogin from "../../components/AuthLogin";
 
 function Login() {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  // const [email, setEmail] = useState("");
+  // const [password, setPassword] = useState("");
 
-  const navigate = useNavigate();
-  const [, setUserStore] = useLocalStorage("user", null);
-  const { user, loginUser } = useAuth();
-  const { createNotificationMessage } = useNotification();
+  // const navigate = useNavigate();
+  // const [, setUserStore] = useLocalStorage("user", null);
+  // const { user, loginUser } = useAuth();
+  // const { createNotificationMessage } = useNotification();
 
-  useEffect(() => {
-    if (user) navigate("/uploads");
-  }, [user, navigate]);
+  // useEffect(() => {
+  //   if (user) navigate("/uploads");
+  // }, [user, navigate]);
 
-  const { mutate, isPending, isError, error } = useMutation({
-    mutationFn: () => Auth.loginUser(email, password),
-    onSuccess: ({ data, error }) => {
-      if (error) {
-        createNotificationMessage(error);
-        return;
-      }
+  // const { mutate, isPending, isError, error } = useMutation({
+  //   mutationFn: () => Authentication.loginUser(email, password),
+  //   onSuccess: ({ data, error }) => {
+  //     if (error) {
+  //       createNotificationMessage(error);
+  //       return;
+  //     }
 
-      loginUser(data);
-      setUserStore(data);
-      createNotificationMessage("You are now logged in!");
-      setTimeout(() => {
-        navigate("/uploads");
-      }, 1500);
-    },
-  });
+  //     loginUser(data);
+  //     setUserStore(data);
+  //     createNotificationMessage("You are now logged in!");
+  //     setTimeout(() => {
+  //       navigate("/uploads");
+  //     }, 1500);
+  //   },
+  // });
 
-  console.log({ isError, error });
+  // console.log({ isError, error });
 
-  const loginHandler = async (event) => {
-    event.preventDefault();
-    mutate(email, password);
-  };
+  // const loginHandler = async (event) => {
+  //   event.preventDefault();
+  //   mutate(email, password);
+  // };
 
-  const onEmailChange = ({ target }) => {
-    setEmail(target.value);
-  };
+  // const onEmailChange = ({ target }) => {
+  //   setEmail(target.value);
+  // };
 
-  const onPasswordChange = ({ target }) => {
-    setPassword(target.value);
-  };
+  // const onPasswordChange = ({ target }) => {
+  //   setPassword(target.value);
+  // };
 
   // if (isError) return <Error error={error} />;
 
-  if (isPending) return <Loading />;
+  // if (isPending) return <Loading />;
 
   return <AuthLogin />;
 }

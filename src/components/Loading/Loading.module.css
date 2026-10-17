@@ -20,7 +20,7 @@
 }
 
 .title {
-  color: var(--text-color);
+  color: var(--theme-color);
 }
 
 .title {
@@ -31,7 +31,7 @@
 .icon {
   width: var(--icon-size-large);
   height: var(--icon-size-large);
-  fill: var(--text-color);
+  fill: var(--theme-color);
   animation: spin 500ms linear both infinite;
 }
 

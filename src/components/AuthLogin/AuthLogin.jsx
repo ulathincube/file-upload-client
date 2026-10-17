@@ -2,6 +2,10 @@ import styles from "./AuthLogin.module.css";
 import { Link } from "react-router";
 import { useState } from "react";
 import Loading from "../Loading";
+import { useMutation } from "@tanstack/react-query";
+import Authentication from "../../services/auth";
+
+console.log({ Authentication });
 
 function Auth() {
   const [email, setEmail] = useState("");
@@ -16,7 +20,20 @@ function Auth() {
     setPassword(event.target.value);
   };
 
-  // return <Loading title="Trying to sign you in" />;
+  const loginMutation = useMutation({
+    mutationFn: () => {
+      Authentication.loginUser(email, password);
+    },
+  });
+
+  const onAuthLogin = (event) => {
+    event.preventDefault();
+    loginMutation.mutate();
+  };
+
+  console.log({ ...loginMutation });
+
+  if (loginMutation.isPending) return <Loading title="Trying to sign you in" />;
 
   return (
     <main className={styles.wrapper}>
@@ -24,7 +41,7 @@ function Auth() {
         <article className={styles.article}>
           <h1 className={styles.title}>Welcome back.</h1>
         </article>
-        <form className={styles.form}>
+        <form onSubmit={onAuthLogin} className={styles.form}>
           <div className={styles.group}>
             <label className={styles.label} htmlFor="email">
               Email address
