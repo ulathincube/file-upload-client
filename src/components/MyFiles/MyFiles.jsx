@@ -103,7 +103,7 @@ function MyFiles() {
                   <line x1="5" y1="12" x2="19" y2="12"></line>
                 </svg>
               </span>
-              <span className={styles.text}>Add</span>
+              <span className={styles.add}>Add</span>
             </button>
             {showContextMenu && (
               <article className={styles.context}>

@@ -3,12 +3,11 @@
   width: 100%;
   display: grid;
   grid-template-areas: "left header header" "left main right";
-  grid-template-columns: 200px 1fr 300px;
+  grid-template-columns: 100px 1fr 300px;
   grid-template-rows: auto 1fr;
-  gap: var(--spacing-30);
+  gap: var(--spacing-20);
 }
 
-.left,
 .right,
 .header {
   padding: var(--spacing-10);
@@ -23,8 +22,9 @@
   display: flex;
   flex-direction: column;
   gap: var(--spacing-20);
-  align-items: center;
-  padding-top: var(--spacing-40);
+
+  padding-top: var(--spacing-20);
+  padding-right: var(--spacing-10);
 }
 
 .header {
@@ -42,12 +42,12 @@
 .main {
   grid-area: main;
   display: flex;
-  gap: var(--spacing-60);
+  gap: var(--spacing-20);
 }
 
 .container {
   display: flex;
-  flex-basis: 200px;
+  flex-basis: 150px;
   align-items: flex-start;
   position: relative;
 }
@@ -110,12 +110,11 @@
   flex-direction: column;
   gap: var(--spacing-10);
   position: absolute;
-  right: -36%;
+  right: -35%;
   top: 15%;
   transform: translate(-50%, -50%);
   background-color: var(--light-gray);
-  padding: var(--spacing-10) var(--spacing-60) var(--spacing-10)
-    var(--spacing-10);
+  padding: var(--spacing-20);
   border-radius: var(--radius-5);
 }
 
@@ -158,6 +157,11 @@
   flex-direction: column;
 }
 
+.add {
+  font-size: 1.3rem;
+  font-weight: var(--font-weight-bold);
+}
+
 .tag,
 .description {
   font-size: var(--font-size-default);
@@ -190,6 +194,10 @@
 .files {
   align-self: center;
   text-align: center;
+  flex: 1;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
 }
 
 .bold {
@@ -198,6 +206,7 @@
 
 .text {
   font-size: var(--font-size-default);
+  font-weight: var(--font-weight-bold);
 }
 
 @media screen and (max-width: 87.5rem) {
@@ -251,6 +260,10 @@
   .wrapper {
     grid-template-columns: 100px 1fr;
   }
+
+  .summary {
+    color: var(--gray);
+  }
 }
 
 @media screen and (max-width: 37.5rem) {
@@ -261,7 +274,15 @@
   .display {
     position: relative;
     justify-content: revert;
-    gap: var(--spacing-60);
+  }
+
+  .bold {
+    font-size: 1.5rem;
+  }
+
+  .big {
+    width: var(--icon-size);
+    height: var(--icon-size);
   }
 
   .left {
