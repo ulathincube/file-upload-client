@@ -1,0 +1,41 @@
+.wrapper {
+  display: flex;
+}
+
+.icon {
+  width: var(--icon-size-superlarge);
+  height: var(--icon-size-superlarge);
+}
+
+.details {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-10);
+}
+
+.title {
+  font-size: var(--font-size-large);
+  font-weight: var(--font-weight-bold);
+}
+
+.container {
+  display: flex;
+  gap: var(--spacing-20);
+}
+
+.download,
+.share {
+  border-radius: var(--radius-50);
+  padding: var(--spacing-10) var(--spacing-20);
+}
+
+.download {
+  border: 1px solid var(--theme-color);
+  color: var(--white);
+}
+
+.share {
+  color: var(--text-color);
+  border: 1px solid currentColor;
+  background-color: transparent;
+}
