@@ -7,6 +7,7 @@ import SingleFile from "./pages/SingleFile";
 import About from "./pages/About";
 import CurrentFolder from "./pages/CurrentFolder";
 import Folder from "./pages/Folder";
+import File from "./pages/File";
 import NotFound from "./pages/NotFound";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import AuthContext from "./context/AuthContext";
@@ -81,7 +82,6 @@ function App() {
                 <Route element={<Protected />}>
                   <Route path="uploads" element={<Uploads />} />
                   <Route path="uploads/:folder" element={<Folder />} />
-                  <Route path="uploads/file/:fileId" element={<SingleFile />} />
                 </Route>
                 <Route path="*" element={<NotFound />} />
               </Routes>
