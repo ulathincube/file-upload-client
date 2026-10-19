@@ -157,6 +157,8 @@ ol {
   --radius-25: 25px;
   --radius-50: 50px;
 
+  --icon-size-superlarge: 150px;
+  --icon-size-larger: 72px;
   --icon-size-large: 48px;
   --icon-size: 24px;
   --icon-size-small: 16px;

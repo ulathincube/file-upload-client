@@ -1,6 +1,8 @@
 import styles from "./MyFiles.module.css";
 import { useState } from "react";
 import HomeBar from "../HomeBar";
+import FilesGrid from "../FilesGrid";
+import GridFile from "../GridFile";
 
 function MyFiles() {
   const [showContextMenu, setShowContextMenu] = useState(false);
@@ -83,7 +85,7 @@ function MyFiles() {
         <header className={styles.header}>
           <h2 className={styles.title}>My Files</h2>
         </header>
-        <main className={styles.main}>
+        {/* <main className={styles.main}>
           <div className={styles.container}>
             <button onClick={onShowContextMenu} className={styles.action}>
               <span className={styles.parent}>
@@ -197,7 +199,13 @@ function MyFiles() {
               </article>
             </section>
           </article>
-        </main>
+        </main> */}
+
+        <FilesGrid>
+          <GridFile text="Medicals" />
+          <GridFile text="Sponsorships" />
+        </FilesGrid>
+
         <aside className={styles.right}>
           <div className={styles.box}>
             <svg

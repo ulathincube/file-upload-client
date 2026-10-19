@@ -3,4 +3,35 @@
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: var(--spacing-10);
+  grid-area: main;
+}
+
+@media screen and (min-width: 31.25rem) {
+  .wrapper {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media screen and (min-width: 50rem) {
+  .wrapper {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media screen and (min-width: 68.75rem) {
+  .wrapper {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+
+@media screen and (min-width: 87.5rem) {
+  .wrapper {
+    grid-template-columns: repeat(6, 1fr);
+  }
+}
+
+@media screen and (min-width: 100rem) {
+  .wrapper {
+    grid-template-columns: repeat(8, 1fr);
+  }
 }
