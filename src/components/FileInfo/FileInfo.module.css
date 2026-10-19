@@ -1,16 +1,40 @@
 .wrapper {
   display: flex;
+  gap: var(--spacing-60);
+  /* align-items: center; */
+  padding: var(--spacing-60) 0;
+  flex: 1;
+  /* padding: var(--spacing-20) 0; */
+}
+
+.box {
+  background-color: var(--light-gray);
+  border-radius: var(--radius-5);
+  padding: var(--spacing-10);
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .icon {
   width: var(--icon-size-superlarge);
   height: var(--icon-size-superlarge);
+  stroke-width: 0.5;
 }
 
 .details {
+  flex: 1;
   display: flex;
   flex-direction: column;
-  gap: var(--spacing-10);
+  gap: var(--spacing-40);
+  font-size: var(--font-size-large);
+  align-self: center;
+}
+
+.group {
+  display: flex;
+  gap: var(--spacing-20);
 }
 
 .title {
@@ -26,11 +50,13 @@
 .download,
 .share {
   border-radius: var(--radius-50);
-  padding: var(--spacing-10) var(--spacing-20);
+  padding: var(--spacing-5) var(--spacing-20);
+  font-size: var(--font-size-medium);
 }
 
 .download {
   border: 1px solid var(--theme-color);
+  background-color: var(--theme-color);
   color: var(--white);
 }
 
@@ -38,4 +64,66 @@
   color: var(--text-color);
   border: 1px solid currentColor;
   background-color: transparent;
+}
+
+@media screen and (max-width: 62.5rem) {
+  .wrapper {
+    gap: var(--spacing-20);
+  }
+
+  .details {
+    gap: var(--spacing-20);
+  }
+
+  .title {
+    font-size: var(--font-size-medium);
+  }
+
+  .details {
+    font-size: var(--font-size-medium);
+  }
+}
+
+@media screen and (max-width: 50rem) {
+  .details {
+    font-size: var(--font-size-default);
+    text-align: center;
+  }
+
+  .container {
+    flex-direction: column;
+    gap: var(--spacing-10);
+  }
+
+  .group {
+    justify-content: center;
+  }
+
+  .download,
+  .share {
+    font-size: var(--font-size-default);
+  }
+}
+
+@media screen and (max-width: 37.5rem) {
+  .wrapper {
+    flex-direction: column;
+  }
+
+  .box {
+    background-color: transparent;
+  }
+
+  .container {
+    min-width: 100%;
+  }
+
+  .details {
+    align-self: stretch;
+  }
+
+  .download,
+  .share {
+    padding: var(--spacing-10);
+  }
 }

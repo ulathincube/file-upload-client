@@ -82,6 +82,7 @@ function App() {
                 <Route element={<Protected />}>
                   <Route path="uploads" element={<Uploads />} />
                   <Route path="uploads/:folder" element={<Folder />} />
+                  <Route path="uploads/file/:fileId" element={<File />} />
                 </Route>
                 <Route path="*" element={<NotFound />} />
               </Routes>

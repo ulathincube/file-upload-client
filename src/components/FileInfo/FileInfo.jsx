@@ -1,6 +1,6 @@
 import styles from "./FileInfo.module.css";
 
-function FileInfo({ title }) {
+function FileInfo({ title = "Hello World" }) {
   return (
     <article className={styles.wrapper}>
       <div className={styles.box}>
