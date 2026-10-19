@@ -4,9 +4,11 @@ import HomeBar from "../HomeBar";
 import FilesGrid from "../FilesGrid";
 import GridFile from "../GridFile";
 import GridFolder from "../GridFolder";
+import BigContextMenu from "../BigContextMenu";
 
 function MyFiles() {
   const [showContextMenu, setShowContextMenu] = useState(false);
+  const [showBigContext, setShowBigContext] = useState(false);
 
   const onShowContextMenu = () => {
     setShowContextMenu(true);
@@ -14,6 +16,14 @@ function MyFiles() {
 
   const onHideContextMenu = () => {
     setShowContextMenu(false);
+  };
+
+  const onShowBigContextMenu = () => {
+    setShowBigContext(true);
+  };
+
+  const onHideBigContextMenu = () => {
+    setShowBigContext(false);
   };
 
   return (
@@ -82,7 +92,7 @@ function MyFiles() {
             </div>
             <h3 className={styles.description}>Shared</h3>
           </div>
-          <div className={styles.group}>
+          <button onClick={onShowBigContextMenu} className={styles.group}>
             <div className={styles.box}>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -101,7 +111,10 @@ function MyFiles() {
               </svg>
             </div>
             <h3 className={styles.description}>New</h3>
-          </div>
+          </button>
+          {showBigContext && (
+            <BigContextMenu onHideContextMenu={onHideBigContextMenu} />
+          )}
         </aside>
         <header className={styles.header}>
           <h2 className={styles.title}>My Files</h2>
