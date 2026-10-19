@@ -1,9 +1,10 @@
 import styles from "./HomeBar.module.css";
+import { Link } from "react-router";
 
 function HomeBar() {
   return (
     <main className={styles.wrapper}>
-      <button className={styles.action}>
+      <Link to="/" className={styles.link}>
         <span className={styles.box}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -22,7 +23,7 @@ function HomeBar() {
           </svg>
         </span>
         <span className={styles.text}>Home</span>
-      </button>
+      </Link>
       <button className={styles.action}>
         <span className={styles.box}>
           <svg
