@@ -3,6 +3,7 @@ import { useState } from "react";
 import HomeBar from "../HomeBar";
 import FilesGrid from "../FilesGrid";
 import GridFile from "../GridFile";
+import GridFolder from "../GridFolder";
 
 function MyFiles() {
   const [showContextMenu, setShowContextMenu] = useState(false);
@@ -204,6 +205,7 @@ function MyFiles() {
         <FilesGrid>
           <GridFile text="Medicals" />
           <GridFile text="Sponsorships" />
+          <GridFolder text="Games" />
         </FilesGrid>
 
         <aside className={styles.right}>

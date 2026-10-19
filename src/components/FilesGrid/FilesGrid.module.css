@@ -4,6 +4,7 @@
   grid-template-columns: repeat(2, 1fr);
   gap: var(--spacing-10);
   grid-area: main;
+  grid-auto-rows: min-content;
 }
 
 @media screen and (min-width: 31.25rem) {
