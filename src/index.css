@@ -142,6 +142,8 @@ ol {
   --alarm-color: hsl(330deg 100% 50%);
   --overlay: hsl(140deg 10% 10% / 0.85);
 
+  --shadow-light: hsl(140deg 10% 10% / 0.25);
+
   --spacing-5: 5px;
   --spacing-10: 10px;
   --spacing-20: 20px;
@@ -164,6 +166,8 @@ ol {
   --icon-size-small: 16px;
 
   --blur: 5px;
+
+  --small-shadow: 1px 2px 2px var(--shadow-light);
 }
 
 body {
