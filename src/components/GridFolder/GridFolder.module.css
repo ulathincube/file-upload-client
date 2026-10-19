@@ -1,0 +1,23 @@
+.wrapper {
+  aspect-ratio: 1 / 1;
+  background-color: var(--light-gray);
+  padding: var(--spacing-5);
+
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-10);
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  border-radius: var(--radius-5);
+}
+
+.icon {
+  width: var(--icon-size-larger);
+  height: var(--icon-size-larger);
+  stroke-width: 0.5;
+}
+
+.text {
+  font-size: var(--font-size-default);
+}
